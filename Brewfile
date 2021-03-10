@@ -1,0 +1,12 @@
+install clang-format
+install cmake
+install exercism
+install fzf
+install hugo
+install luajit-openresty
+install luarocks
+install neovim
+install pandoc
+install pkg-config
+install yarn
+install zsh
