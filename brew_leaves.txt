@@ -1,0 +1,12 @@
+clang-format
+cmake
+exercism
+fzf
+hugo
+luajit-openresty
+luarocks
+neovim
+pandoc
+pkg-config
+yarn
+zsh
