@@ -2,14 +2,14 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 endif
+
 call plug#begin('~/.vim/plugged')
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'               "nvim lsp stuff
 Plug 'anott03/nvim-lspinstall'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/popup.nvim'                 "nvim telescope stuff
-Plug 'nvim-lua/plenary.nvim'               
+Plug 'nvim-lua/plenary.nvim'                
 Plug 'nvim-telescope/telescope.nvim'        
 Plug 'ervandew/supertab'                   " better tab completion
 Plug 'ianks/vim-tsx'                       " Syntax highlighting and indenting for TSX
@@ -29,10 +29,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'arcticicestudio/nord-vim'            " themes
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'colepeters/spacemacs-theme.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'phanviet/vim-monokai-pro'
-Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'whatyouhide/vim-gotham'
@@ -47,20 +45,23 @@ Plug 'mbbill/undotree'                     " undo mgmt
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'                     " emmet
 Plug 'dense-analysis/ale'                  " Asynchronous Lint Engine
+Plug 'kassio/neoterm'                      " Easier integrated terminal workflow
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'} " Intellisense integration for TailwindCSS
+
 
 call plug#end()
 
-" map leader to spacebar (best thing ever)
+" map leader to spacebar
 let mapleader = ' '
 
-let g:airline_theme='base16'  
+" let g:airline_theme='base16'  
 
 " theme
 set cursorcolumn
 syntax enable           " Enable code highlighting
 set guioptions-=r
 set termguicolors
-colorscheme gotham
+colorscheme seoul256 
 set background=dark
 "hi Normal       ctermfg=250 guifg=#d0d0d0 ctermbg=black guibg=#0c0c0c
 highlight Normal guibg=none
@@ -109,29 +110,21 @@ vnoremap <C-Q>     <esc>
 nnoremap <Leader>q :q<cr>
 nnoremap <Leader>Q :qa!<cr>
 
-" ----------------------------------------------------------------------------
 " Moving lines
-" ----------------------------------------------------------------------------
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
+nnoremap <silent> <leader>j :move+<cr>
+nnoremap <silent> <leader>k :move-2<cr>
+nnoremap <silent> <leader>h <<
+nnoremap <silent> <leader>l >>
+xnoremap <silent> <leader>j :move'>+<cr>gv
+xnoremap <silent> <leader>k :move-2<cr>gv
+xnoremap <silent> <leader>h <gv
+xnoremap <silent> <leader>l >gv
 xnoremap < <gv
 xnoremap > >gv
 
-" split windows
-nnoremap <leader>j <C-W><C-J>
-nnoremap <leader>k <C-W><C-K>
-nnoremap <leader>l <C-W><C-L>
-nnoremap <leader>h <C-W><C-H>
-tnoremap <leader>h <C-\><C-N><C-w>h
-tnoremap <leader>j <C-\><C-N><C-w>j
-tnoremap <leader>k <C-\><C-N><C-w>k
-tnoremap <leader>l <C-\><C-N><C-w>l
+" Open new line below and above current line
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
 
 " moving between buffers
 nnoremap <Tab> :bnext<CR>
@@ -152,6 +145,13 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" terminal shortcuts
+tnoremap <Esc> <C-\><C-n>
+nnoremap <leader>tl :<c-u>exec v:count.'Tclear'<cr>
+nnoremap <leader>tn :Tnew<cr>
+nnoremap <leader>t :Ttoggle<cr>
+nnoremap <leader>tc :Tclose!<cr>
 
 " set one directory for .swp files
 set backupdir=/var/tmp,/tmp
@@ -210,10 +210,10 @@ noremap <leader>b :Buffers<CR>
 let g:NERDCustomDelimiters = { 'less': { 'left': '// ', 'right': '', 'leftAlt': '/* ', 'rightAlt': ' */' }, 'javascript': { 'left': '// ', 'right': '', 'leftAlt': '/* ', 'rightAlt': ' */' } }
 
 " NERDTree options
-noremap <leader>t :NERDTreeFind<CR>
-noremap <leader>tt :NERDTreeToggle<CR>
-noremap <leader>tc :NERDTreeClose<CR>
-noremap <leader>tf :NERDTreeFocus<CR>
+noremap <leader>n :NERDTreeFind<CR>
+noremap <leader>nt :NERDTreeToggle<CR>
+noremap <leader>nc :NERDTreeClose<CR>
+noremap <leader>nf :NERDTreeFocus<CR>
 let g:NERDTreeWinSize = 50
 
 " Language Server (coc) options
