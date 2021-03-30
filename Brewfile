@@ -3,6 +3,7 @@ install cmake
 install exercism
 install fzf
 install gh
+install libevent
 install luajit
 install luarocks
 install luv
@@ -12,7 +13,7 @@ install pandoc
 install pkg-config
 install python@3.9
 install ripgrep
-install tmux
+install utf8proc
 install yarn
 install yuicompressor
 install zsh
