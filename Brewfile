@@ -6,7 +6,6 @@ install gh
 install libevent
 install luajit
 install luarocks
-install luv
 install n
 install neovim
 install pandoc
