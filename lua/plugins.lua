@@ -1,51 +1,38 @@
 local vim = vim
-local execute = vim.api.nvim_command
-local fn = vim.fn
 
--- ensure that packer is installed
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-    execute 'packadd packer.nvim'
-end
-vim.cmd('packadd packer.nvim')
-local packer = require'packer'
-local util = require'packer.util'
-packer.init({
-  package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
-})
-
-packer.startup(function()
+return require('packer').startup(function()
   local use = use
 
-  use 'kassio/neoterm'
+  use 'wbthomason/packer.nvim'
 
+  -- experimental git worktrees integration
   use 'ThePrimeagen/git-worktree.nvim'
 
   -- themes
-  use 'tjdevries/colorbuddy.nvim'
-  use 'bkegley/gloombuddy'
   use 'marko-cerovac/material.nvim'
-  use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  use 'cxxiii/tokyonight.nvim'
 
-  -- syntax highlighting
+  -- syntax
   use 'nvim-treesitter/nvim-treesitter'
   use 'sheerun/vim-polyglot'
 
   -- UI
-  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+  use 'tamago324/lir.nvim'
   use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  'hoob3rt/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'ryanoasis/vim-devicons'
-  use 'kyazdani42/nvim-tree.lua'
 
   -- lsp package
   use 'neovim/nvim-lspconfig'
-  use 'anott03/nvim-lspinstall'
+  use 'kabouzeid/nvim-lspinstall'
   use 'onsails/lspkind-nvim'
+  use {
+  "folke/lsp-trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  }
+  use 'glepnir/lspsaga.nvim'
 
   -- telescope package
   use 'nvim-lua/popup.nvim'
@@ -64,10 +51,14 @@ packer.startup(function()
   use 'phaazon/hop.nvim'
   use 'ThePrimeagen/harpoon'
 
-  -- utils
+  -- autocomplete
   use 'hrsh7th/nvim-compe'
+
+  -- code snippts
   use 'hrsh7th/vim-vsnip'
   use "rafamadriz/friendly-snippets"
+
+  -- misc utils
   use {'prettier/vim-prettier', run = 'yarn install' }
   use 'mattn/emmet-vim'
   use 'norcalli/nvim-colorizer.lua'

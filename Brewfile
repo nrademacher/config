@@ -3,6 +3,8 @@ install cmake
 install exercism
 install fzf
 install gh
+install go
+install gopls
 install libevent
 install luajit
 install luarocks

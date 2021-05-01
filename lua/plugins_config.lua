@@ -1,4 +1,71 @@
-vim.g.neoterm_default_mod = ":botright"
+local actions = require'lir.actions'
+local mark_actions = require 'lir.mark.actions'
+local clipboard_actions = require'lir.clipboard.actions'
+
+require'lir'.setup {
+  show_hidden_files = false,
+  devicons_enable = true,
+  mappings = {
+    ['l']     = actions.edit,
+    ['<C-s>'] = actions.split,
+    ['<C-v>'] = actions.vsplit,
+    ['<C-t>'] = actions.tabedit,
+
+    ['h']     = actions.up,
+    ['q']     = actions.quit,
+
+    ['K']     = actions.mkdir,
+    ['N']     = actions.newfile,
+    ['R']     = actions.rename,
+    ['@']     = actions.cd,
+    ['Y']     = actions.yank_path,
+    ['.']     = actions.toggle_show_hidden,
+    ['D']     = actions.delete,
+
+    ['J'] = function()
+      mark_actions.toggle_mark()
+      vim.cmd('normal! j')
+    end,
+    ['C'] = clipboard_actions.copy,
+    ['X'] = clipboard_actions.cut,
+    ['P'] = clipboard_actions.paste,
+  },
+  float = {
+    size_percentage = 0.5,
+    winblend = 15,
+    border = true,
+    borderchars = {"╔" , "═" , "╗" , "║" , "╝" , "═" , "╚", "║"},
+
+    -- -- If you want to use `shadow`, set `shadow` to `true`.
+    -- -- Also, if you set shadow to true, the value of `borderchars` will be ignored.
+    -- shadow = false,
+  },
+  hide_cursor = true,
+}
+
+-- custom folder icon
+require'nvim-web-devicons'.setup({
+  override = {
+    lir_folder_icon = {
+      icon = "",
+      color = "#7ebae4",
+      name = "LirFolderNode"
+    },
+  }
+})
+
+-- use visual mode
+function _G.LirSettings()
+  vim.api.nvim_buf_set_keymap(0, 'x', 'J', ':<C-u>lua require"lir.mark.actions".toggle_mark("v")<CR>', {noremap = true, silent = true})
+
+  -- echo cwd
+  vim.api.nvim_echo({{vim.fn.expand('%:p'), 'Normal'}}, false, {})
+end
+
+vim.cmd [[augroup lir-settings]]
+vim.cmd [[  autocmd!]]
+vim.cmd [[  autocmd Filetype lir :lua LirSettings()]]
+vim.cmd [[augroup END]]
 
 vim.g['prettier#config#single_quote'] = true
 
@@ -61,7 +128,6 @@ telescope.setup {
 }
 
 require("git-worktree").setup()
-
 require("telescope").load_extension("git_worktree")
 
 require("harpoon").setup()
@@ -120,31 +186,15 @@ end
 
 remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
 
-require'colorizer'.setup{
-  css = { css = true; }
-}
-require'bufferline'.setup{
-  options = {
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    diagnostics = "nvim_lsp",
-    diagnostics_indicator = function(count, level)
-      local icon = level:match("error") and " " or ""
-      return " " .. icon .. count
-    end,
-    custom_filter = function(buf_number)
-      if vim.bo[buf_number].filetype ~= "neoterm" then
-        return true
-      end
-    end,
-    separator_style = { '', '' },
-    always_show_bufferline = false
-  }
-}
+require'colorizer'.setup()
 
-require('statusline')
+require('lualine').setup{
+  options = {theme = 'material-nvim'}
+}
 
 require'lspkind'.init()
+
+require'lspsaga'.init_lsp_saga()
 
 local function setup_diagnostics()
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -159,18 +209,10 @@ end
 -- add setup_diagnostics() to our custom_on_attach
 
 local lspconfig = require'lspconfig'
-local function custom_on_attach(client)
-  print('Attaching to ' .. client.name)
-  setup_diagnostics()
-end
-local default_config = {
-  on_attach = custom_on_attach,
-}
-
 -- setup language servers here
-lspconfig.tsserver.setup(default_config)
-lspconfig.html.setup({})
-lspconfig.cssls.setup({})
-lspconfig.svelte.setup({})
-lspconfig.jsonls.setup({})
+require'lspinstall'.setup()
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  lspconfig[server].setup{}
+end
 
