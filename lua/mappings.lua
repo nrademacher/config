@@ -46,6 +46,9 @@ map('n', '<leader>p', '"*p')
 map('n', '<leader>Y', '"+y')
 map('n', '<leader>P', '"+p')
 
+-- terminal escape
+map('t', '<ESC>', '<C-\\><C-n>')
+
 -- buffer management
 map('n', '<leader>x', ':bd<CR>')
 map('n', '<leader>ax', ':%bd<CR>')
@@ -84,7 +87,7 @@ map('n', '<leader>cc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnos
 map('n', '[e', ':Lspsaga diagnostic_jump_next<CR>')
 map('n', ']e', ':Lspsaga diagnostic_jump_next<CR>')
 map('n', '<leader>d', ':Lspsaga open_floaterm<CR>')
-map('t', '<leader>d', '<C-\\><C-n>:Lspsaga close_floaterm<CR>')
+map('t', '<ESC>', '<C-\\><C-n>:Lspsaga close_floaterm<CR>')
 
 -- lsp trouble
 map('n', '<leader>lt', ':LspTroubleToggle<CR>')
@@ -93,7 +96,7 @@ map('n', '<leader>ldt', ':LspTroubleDocumentToggle<CR>')
 
 -- git worktrees
 map('n', '<leader>gw', ':lua require("git-worktree").')
-map('n', '<leader>gwc', ':lua require("git-worktree").create_worktree("develop", "master")<CR>')
+map('n', '<leader>gwc', ':lua require("git-worktree").create_worktree("develop", "master", "origin")<CR>')
 map('n', '<leader>gws', ':lua require("git-worktree").switch_worktree("develop")<CR>')
 map('n', '<leader>gwd', ':lua require("git-worktree").delete_worktree("develop")<CR>')
 
@@ -115,11 +118,21 @@ map('n', '<leader>m1', ':lua require("harpoon.mark").set_current_at(1)<CR>')
 map('n', '<leader>m2', ':lua require("harpoon.mark").set_current_at(2)<CR>')
 map('n', '<leader>m3', ':lua require("harpoon.mark").set_current_at(3)<CR>')
 map('n', '<leader>m4', ':lua require("harpoon.mark").set_current_at(4)<CR>')
+map('n', '<leader>m5', ':lua require("harpoon.mark").set_current_at(5)<CR>')
+map('n', '<leader>m6', ':lua require("harpoon.mark").set_current_at(6)<CR>')
+map('n', '<leader>m7', ':lua require("harpoon.mark").set_current_at(7)<CR>')
+map('n', '<leader>m8', ':lua require("harpoon.mark").set_current_at(8)<CR>')
+map('n', '<leader>m9', ':lua require("harpoon.mark").set_current_at(9)<CR>')
 map('n', '<leader>mv', ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
 map('n', '<leader>mr1', ':lua require("harpoon.mark").rm_file(1)<CR>')
 map('n', '<leader>mr2', ':lua require("harpoon.mark").rm_file(2)<CR>')
 map('n', '<leader>mr3', ':lua require("harpoon.mark").rm_file(3)<CR>')
 map('n', '<leader>mr4', ':lua require("harpoon.mark").rm_file(4)<CR>')
+map('n', '<leader>mr5', ':lua require("harpoon.mark").rm_file(5)<CR>')
+map('n', '<leader>mr6', ':lua require("harpoon.mark").rm_file(6)<CR>')
+map('n', '<leader>mr7', ':lua require("harpoon.mark").rm_file(7)<CR>')
+map('n', '<leader>mr8', ':lua require("harpoon.mark").rm_file(8)<CR>')
+map('n', '<leader>mr9', ':lua require("harpoon.mark").rm_file(9)<CR>')
 
 -- moving lines up and down
 map('n', '<leader>j', ':move+<cr>')
