@@ -196,20 +196,7 @@ require'lspkind'.init()
 
 require'lspsaga'.init_lsp_saga()
 
-local function setup_diagnostics()
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = true,
-      virtual_text = true,
-      signs = true,
-      update_in_insert = true,
-    }
-  )
-end
--- add setup_diagnostics() to our custom_on_attach
-
 local lspconfig = require'lspconfig'
--- setup language servers here
 require'lspinstall'.setup()
 local servers = require'lspinstall'.installed_servers()
 for _, server in pairs(servers) do

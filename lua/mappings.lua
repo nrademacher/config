@@ -21,7 +21,8 @@ local map = function(mode, key, result)
   )
 end
 
-map('n', '<leader>.', ':PrettierAsync<CR>')
+-- sort tailwindcss classes, then run prettier
+map('n', '<leader>.', ':lua require("headwind").buf_sort_tailwind_classes()<CR>:PrettierAsync<CR>')
 
 -- unmap arrow keys
 map('n', '<up>', '<nop>')
@@ -79,9 +80,10 @@ map('v', '<leader>ca', ':<C-U>Lspsaga range_code_action<CR>')
 map('n', 'K', ':Lspsaga hover_doc<CR>')
 map('n', '<C-f>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
 map('n', '<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
+map('n', 'gd', ':Lspsaga preview_definition<CR>')
+map('n', 'gh', ':Lspsaga lsp_finder<CR>')
 map('n', 'gs', ':Lspsaga signature_help<CR>')
 map('n', 'gr', ':Lspsaga rename<CR>')
-map('n', 'gd', ':Lspsaga preview_definition<CR>')
 map('n', '<leader>cd', ':Lspsaga show_line_diagnostics<CR>')
 map('n', '<leader>cc', "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
 map('n', '[e', ':Lspsaga diagnostic_jump_next<CR>')

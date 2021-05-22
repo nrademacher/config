@@ -29,7 +29,7 @@ wo.number = true
 wo.numberwidth = 2
 o.laststatus = 2
 
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 --[[ vim.g['gruvbox_transparent_bg'] = '1'
 vim.g['gruvbox_contrast_dark'] = 'hard' ]]
 
@@ -39,9 +39,11 @@ vim.g.tokyonight_transparent = true
 
 vim.g.material_style = "palenight"
 vim.g.material_disable_background = true
--- require('material').set()
+require('material').set()
 
-vim.cmd([[colorscheme tokyonight]])
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+
+-- vim.cmd([[colorscheme tokyonight]])
 vim.cmd[[highlight normal guibg=none]]
 vim.cmd[[hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow]]
 vim.cmd[[hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE]]

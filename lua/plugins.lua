@@ -1,5 +1,4 @@
 local vim = vim
-
 return require('packer').startup(function()
   local use = use
 
@@ -9,8 +8,8 @@ return require('packer').startup(function()
   use 'ThePrimeagen/git-worktree.nvim'
 
   -- themes
+  use 'folke/tokyonight.nvim'
   use 'marko-cerovac/material.nvim'
-  use 'cxxiii/tokyonight.nvim'
 
   -- syntax
   use 'nvim-treesitter/nvim-treesitter'
@@ -59,11 +58,11 @@ return require('packer').startup(function()
   use "rafamadriz/friendly-snippets"
 
   -- misc utils
-  use {'prettier/vim-prettier', run = 'yarn install' }
+  use 'prettier/vim-prettier'
   use 'mattn/emmet-vim'
   use 'norcalli/nvim-colorizer.lua'
+  use "steelsojka/headwind.nvim"
 
-  use 'ThePrimeagen/vim-be-good'
   end
 )
 

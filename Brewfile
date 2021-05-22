@@ -1,3 +1,4 @@
+install bash
 install clang-format
 install cmake
 install exercism
@@ -5,6 +6,7 @@ install fzf
 install gh
 install go
 install gopls
+install heroku/brew/heroku
 install libevent
 install luajit
 install luarocks
