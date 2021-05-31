@@ -1,6 +1,7 @@
 install bash
 install clang-format
 install cmake
+install doctl
 install exercism
 install fzf
 install gh
@@ -10,13 +11,16 @@ install heroku/brew/heroku
 install libevent
 install luajit
 install luarocks
+install lz4
 install n
 install neovim
 install pandoc
 install pkg-config
 install python@3.9
 install ripgrep
+install tcl-tk
 install utf8proc
+install wimlib
 install yarn
 install yuicompressor
 install zsh

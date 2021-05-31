@@ -7,9 +7,9 @@ return require('packer').startup(function()
   -- experimental git worktrees integration
   use 'ThePrimeagen/git-worktree.nvim'
 
-  -- themes
-  use 'folke/tokyonight.nvim'
+  -- theme
   use 'marko-cerovac/material.nvim'
+  use 'eddyekofo94/gruvbox-flat.nvim'
 
   -- syntax
   use 'nvim-treesitter/nvim-treesitter'
@@ -36,11 +36,12 @@ return require('packer').startup(function()
   -- telescope package
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'jremmen/vim-ripgrep'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
-  use 'jremmen/vim-ripgrep'
+  use 'dhruvmanila/telescope-bookmarks.nvim'
 
-  -- text manipulation & navigation
+  -- text manipulation
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-surround'
   use 'windwp/nvim-autopairs'
@@ -50,18 +51,21 @@ return require('packer').startup(function()
   use 'phaazon/hop.nvim'
   use 'ThePrimeagen/harpoon'
 
-  -- autocomplete
+  -- autocompletion
   use 'hrsh7th/nvim-compe'
 
-  -- code snippts
+  -- code snippets
   use 'hrsh7th/vim-vsnip'
   use "rafamadriz/friendly-snippets"
+  use 'mattn/emmet-vim'
+
+  -- formatting
+  use 'prettier/vim-prettier'
+  use "steelsojka/headwind.nvim"
 
   -- misc utils
-  use 'prettier/vim-prettier'
-  use 'mattn/emmet-vim'
   use 'norcalli/nvim-colorizer.lua'
-  use "steelsojka/headwind.nvim"
+  use 'antonk52/bad-practices.nvim'
 
   end
 )

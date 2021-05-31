@@ -1,3 +1,4 @@
+
 local actions = require'lir.actions'
 local mark_actions = require 'lir.mark.actions'
 local clipboard_actions = require'lir.clipboard.actions'
@@ -114,7 +115,7 @@ configs.setup {
   }
 }
 
-local telescope = require 'telescope'
+local telescope = require('telescope')
 local telescope_actions = require 'telescope.actions'
 telescope.setup {
   defaults = {
@@ -123,9 +124,19 @@ telescope.setup {
         ['<C-k>'] = telescope_actions.move_selection_previous,
         ['<C-j>'] = telescope_actions.move_selection_next
       }
-    }
+    },
+ },
+}
+
+telescope.setup {
+  extensions = {
+    bookmarks = {
+      -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
+      selected_browser = 'firefox_dev',
+    },
   }
 }
+telescope.load_extension('bookmarks')
 
 require("git-worktree").setup()
 require("telescope").load_extension("git_worktree")
@@ -189,7 +200,7 @@ remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap =
 require'colorizer'.setup()
 
 require('lualine').setup{
-  options = {theme = 'material-nvim'}
+  options = {theme = 'gruvbox-flat'}
 }
 
 require'lspkind'.init()
