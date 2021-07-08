@@ -1,3 +1,4 @@
+# FORMULAE
 brew 'bash'
 brew 'clang-format'
 brew 'cmake'
@@ -13,6 +14,7 @@ brew 'koekeishiya/formulae/yabai'
 brew 'libevent'
 brew 'luajit'
 brew 'luarocks'
+brew 'lynx'
 brew 'lz4'
 brew 'n'
 brew 'neofetch'
@@ -26,6 +28,8 @@ brew 'wimlib'
 brew 'yarn'
 brew 'yuicompressor'
 brew 'zsh'
+
+# CASKS
 cask 'anki'
 cask 'keka'
 cask 'docker'
