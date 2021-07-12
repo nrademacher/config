@@ -1,15 +1,12 @@
 #! /bin/bash
-echo '# TAPS' > Brewfile
 
-brew tap | sed "s/^/tap '/;s/$/'/" >> Brewfile
+brew tap | sed "s/^/tap '/;s/$/'/" > Brewfile
 
 echo >> Brewfile
-echo '# FORMULAE' >> Brewfile
 
 brew leaves | sed "s/^/brew '/;s/$/'/" >> Brewfile
 
 echo >> Brewfile
-echo '# CASKS' >> Brewfile
 
 brew deps --installed --cask | \
     awk -F'[: ]+' \
