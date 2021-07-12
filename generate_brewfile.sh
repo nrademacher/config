@@ -1,6 +1,10 @@
 #! /bin/bash
+echo '# TAPS' > Brewfile
 
-echo '# FORMULAE' > Brewfile
+brew tap | sed "s/^/tap '/;s/$/'/" >> Brewfile
+
+echo >> Brewfile
+echo '# FORMULAE' >> Brewfile
 
 brew leaves | sed "s/^/brew '/;s/$/'/" >> Brewfile
 
