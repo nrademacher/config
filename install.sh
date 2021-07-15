@@ -18,10 +18,6 @@ packages=(
   "zsh"
 )
 
-function exists() {
-  type "$1" &> /dev/null;
-}
-
 function join_by() {
   local IFS="$1"
   shift
@@ -31,90 +27,105 @@ function join_by() {
 function install_packages() {
   local p=$(join_by " " "${packages[@]}")
   sudo -S pacman -S $p
+
+  return 0
 }
-
-
-function create_dir() {
-  if [ ! -d "$1" ]; then
-    echo "Creating $1"
-    mkdir -p $1
-  fi
-}
-
-# Might as well ask for password up-front, right?
-echo "Starting install script, please grant me sudo access..."
-sudo -v
-
-# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-install_packages || echo "failed to install packages"
 
 # Build neovim from source
-echo
-echo "Building neovim from source..."
-git clone https://github.com/neovim/neovim.git
-cd neovim
-make CMAKE_BUILD_TYPE=Development
-make CMAKE_INSTALL_PREFIX=$HOME/local/nvim install
-ln -s $HOME/local/nvim /usr/local/bin
-sudo make CMAKE_INSTALL_PREFIX=/opt/nvim install
-sudo ln -s /opt/nvim/bin/nvim /usr/local/bin
-cd "$HOME" || exit
-echo "---------------------------------------------------------"
+function build_neovim() {
+  echo "---------------------------------------------------------"
+  echo "Building neovim from source..."
+  
+  git clone https://github.com/neovim/neovim.git
+  cd neovim
+  make CMAKE_BUILD_TYPE=Development
+  make CMAKE_INSTALL_PREFIX=$HOME/local/nvim install
+  ln -s $HOME/local/nvim /usr/local/bin
+  sudo make CMAKE_INSTALL_PREFIX=/opt/nvim install
+  sudo ln -s /opt/nvim/bin/nvim /usr/local/bin
 
-# Set up docker
-sudo usermod -a -G docker $USER
-sudo systemctl start docker
-sudo systemctl enable docker
+  cd "$HOME" || exit
 
-# Clone my dotfiles repo into ~/.dotfiles/ if needed
-echo "dotfiles -------------------------------------------------"
+  return 0
+}
 
-export DOTFILES="$HOME/.dotfiles"
+function run_install_script() {
+  echo "Starting install script, please grant me sudo access..."
+  sudo -v
 
-if [ -f "$DOTFILES" ]; then
-  echo "Dotfiles have already been cloned into the home dir"
-else
-  echo "Cloning dotfiles"
-  git clone https://github.com/nrademacher/dotfiles.git ~/.dotfiles
-fi
+  # Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+  
+  install_packages
+  build_neovim
 
-cd "$DOTFILES" || "Didn't cd into dotfiles this will be bad :("
-git submodule update --init --recursive
+  # Install packer.nvim
+  git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-cd "$HOME" || exit
-echo "---------------------------------------------------------"
+  # Install n node version manager program
+  curl -L https://git.io/n-install | bash
 
-echo "You'll need to log out for this to take effect"
+  # Install fzf
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 
-# Install packer.nvim
-git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+  # Get zsh plugins
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/local/share/powerlevel10k
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions
 
-# Install n node version manager program
-curl -L https://git.io/n-install | bash
+  echo "Installs successful."
 
-# Install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+  return 0
+}
 
-# Get zsh plugins
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/local/share/powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions
+function run_setup_config() {
+  # Set up docker
+  sudo usermod -a -G docker $USER
+  sudo systemctl start docker
+  sudo systemctl enable docker
 
-echo "---------------------------------------------------------"
-echo "Changing to zsh"
-echo "---------------------------------------------------------"
-chsh -s "$(which zsh)"
+  # Clone my dotfiles repo into ~/.dotfiles/ if needed
+  echo "dotfiles -------------------------------------------------"
 
-$DOTFILES/install
+  export DOTFILES="$HOME/.dotfiles"
 
-echo 'done'
-echo "---------------------------------------------------------"
-echo "All done!"
-echo "Cheers"
-echo "---------------------------------------------------------"
+  if [ -f "$DOTFILES" ]; then
+    echo "Dotfiles have already been cloned into the home dir"
+  else
+    echo "Cloning dotfiles"
+    git clone https://github.com/nrademacher/dotfiles.git ~/.dotfiles
+  fi
 
-exit 0
+  cd "$DOTFILES" || "Didn't cd into dotfiles this will be bad :("
+  git submodule update --init --recursive
+
+  cd "$HOME" || exit
+  echo "---------------------------------------------------------"
+  echo "You'll need to log out for this to take effect"
+
+  echo "---------------------------------------------------------"
+  echo "Changing to zsh"
+  echo "---------------------------------------------------------"
+  chsh -s "$(which zsh)"
+
+  $DOTFILES/install
+
+  return 0
+}
+
+
+function main() {
+  run_install_script
+  run_setup_config
+
+  echo 'done'
+  echo "---------------------------------------------------------"
+  echo "All done!"
+  echo "Cheers"
+  echo "---------------------------------------------------------"
+
+  exit 0
+}
+
 
