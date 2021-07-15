@@ -77,6 +77,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
+  ["express_line.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/express_line.nvim"
+  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/formatter.nvim"
@@ -92,10 +96,6 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/gruvbox"
-  },
-  ["gruvbox-flat.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim"
   },
   harpoon = {
     loaded = true,
@@ -125,10 +125,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lualine.nvim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
@@ -153,6 +149,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -169,9 +169,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["seoul256.vim"] = {
+  shadotheme = {
     loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/seoul256.vim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/shadotheme"
   },
   ["sideways.vim"] = {
     loaded = true,
@@ -185,9 +185,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-journal"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-journal"
+  },
   ["vim-ripgrep"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-ripgrep"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -196,6 +204,10 @@ _G.packer_plugins = {
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+  },
+  ["vim-yin-yang"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-yin-yang"
   }
 }
 

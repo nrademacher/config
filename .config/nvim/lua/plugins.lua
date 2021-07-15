@@ -10,17 +10,14 @@ return require("packer").startup {
 
     -- themes
     use "gruvbox-community/gruvbox"
-    use "eddyekofo94/gruvbox-flat.nvim"
-    use "junegunn/seoul256.vim"
-
-    -- syntax
-    use "nvim-treesitter/nvim-treesitter"
+    use "pgdouyon/vim-yin-yang"
+    use "Shadorain/shadotheme"
 
     -- UI
-    use {
-      "hoob3rt/lualine.nvim",
-      requires = {"kyazdani42/nvim-web-devicons", opt = true}
-    }
+    use "tjdevries/express_line.nvim"
+
+    -- syntax
+    use "nvim-treesitter/nvim-treesitter" -- UI
 
     -- lsp setup
     use "neovim/nvim-lspconfig"
@@ -43,6 +40,7 @@ return require("packer").startup {
     use "b3nj5m1n/kommentary"
     use "tpope/vim-surround"
     use "windwp/nvim-autopairs"
+    use "windwp/nvim-ts-autotag"
 
     -- navigation
     use "AndrewRadev/sideways.vim"
@@ -62,8 +60,10 @@ return require("packer").startup {
     use "steelsojka/headwind.nvim"
 
     -- misc utils
+    use "dstein64/vim-startuptime"
     use "norcalli/nvim-colorizer.lua"
     use "antonk52/bad-practices.nvim"
+    use "junegunn/vim-journal"
   end,
   config = {
     git = {

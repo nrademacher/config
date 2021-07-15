@@ -1,0 +1,57 @@
+[user]
+  name = "Nikolay Rademacher"
+[include]
+  path = ~/.gitconfig.local
+[status]
+  submoduleSummary = true
+[commit]
+  template = ~/.gitmessage
+[color]
+  ui = auto
+  status = auto
+  diff = auto
+  branch = auto
+  showBranch = auto
+  interactive = auto
+[core]
+  editor = "nvim" # or nvim
+  excludesfile ="~/.dotfiles/git/.gitignore_global"
+  pager = delta
+[alias]
+  pr = "!f() { git fetch upstream refs/pull/$1/head:pr/$1; } ; f"
+  fix='$EDITOR `git diff --name-only | uniq`'
+  # List all aliases.  Stolen from here: https://twitter.com/TrevorBramble/status/774292970681937920
+  aliases = "!git config -l | grep ^alias | cut -c 7- | sort"
+  # Destroy all local changes and reset to HEAD.
+  fuckit = reset --hard HEAD
+  fall = fetch --all
+  # Reset previous commit, but keep all the associated changes. Useful for avoiding nasty git merge commits.
+  uncommit = reset --soft HEAD^
+  reset-up = reset --hard $(git upstream)
+  sl = log --oneline --decorate -20
+  new = checkout -b
+[delta]
+  features = line-numbers decorations
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+[interactive]
+  diffFilter = delta --color-only
+[push]
+  default = current
+[push]
+  followTags = true
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
+[fetch]
+  prune = true
+[gitsh]
+  prompt = "\n%D %c(%b%#)%w ➜"
+[rerere]
+  enabled = true
+[hub]
+  protocol = ssh
+[init]
+  defaultBranch = main

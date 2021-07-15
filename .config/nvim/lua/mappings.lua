@@ -19,6 +19,10 @@ end
 -- sort tailwindcss classes
 map("n", "<leader>.", ':lua require("headwind").buf_sort_tailwind_classes()<CR>')
 
+-- switch between dark/light themes
+map("n", "<leader>tl", ':lua vim.o.background = "light"<CR>')
+map("n", "<leader>td", ':lua vim.o.background = "dark"<CR>')
+
 -- unmap arrow keys
 map("n", "<up>", "<nop>")
 map("i", "<up>", "<nop>")
@@ -48,9 +52,6 @@ map("t", "<ESC>", "<C-\\><C-n>")
 -- buffer management
 map("n", "<leader>x", ":bd<CR>")
 map("n", "<leader>ax", ":%bd<CR>")
-
--- file explorer float
-map("n", "<leader>e", ":lua require'lir.float'.toggle()<CR>")
 
 -- quicker saving and quitting
 map("n", "<leader>w", ":update<cr>")

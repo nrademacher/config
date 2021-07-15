@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- create:
+    - ~/.ssh
+    - ~/.config
+    - ~/projects
+
+- clean: ["~"]
+
+- link:
+    ~/.dotfiles: ""
+    ~/.Xresources: .Xresources
+    ~/.profile: .profile
+    ~/.zshrc: zsh/.zshrc
+    ~/.zshenv: zsh/.zshenv
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitmessage: git/.gitmessage
+    ~/.gitignore_global: git/.gitignore_global
+    ~/.config/nvim: .config/nvim
+    ~/.config/kitty:
+      force: true
+      path: .config/kitty
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [cp ./git/config.template ~/.gitconfig.local]
+
