@@ -66,6 +66,11 @@ sudo ln -s /opt/nvim/bin/nvim /usr/local/bin
 cd "$HOME" || exit
 echo "---------------------------------------------------------"
 
+# Set up docker
+sudo usermod -a -G docker $USER
+sudo systemctl start docker
+sudo systemctl enable docker
+
 # Clone my dotfiles repo into ~/.dotfiles/ if needed
 echo "dotfiles -------------------------------------------------"
 
