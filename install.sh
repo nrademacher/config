@@ -2,20 +2,20 @@
 
 packages=(
   "anki"
-  "bat",
-  "calibre",
-  "clang",
-  "cmake",
-  "deno",
-  "docker",
-  "github-cli",
-  "go",
-  "kitty",
-  "lynx",
-  "ripgrep",
-  "tree",
-  "ttf-fira-code",
-  "zsh",
+  "bat"
+  "calibre"
+  "clang"
+  "cmake"
+  "deno"
+  "docker"
+  "github-cli"
+  "go"
+  "kitty"
+  "lynx"
+  "ripgrep"
+  "tree"
+  "ttf-fira-code"
+  "zsh"
 )
 
 exists() {
