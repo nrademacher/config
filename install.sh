@@ -91,6 +91,9 @@ echo "---------------------------------------------------------"
 
 echo "You'll need to log out for this to take effect"
 
+# Install packer.nvim
+git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 # Install n node version manager program
 curl -L https://git.io/n-install | bash
 
