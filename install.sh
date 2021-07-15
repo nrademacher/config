@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 packages=(
   "anki"
@@ -18,26 +18,23 @@ packages=(
   "zsh"
 )
 
-exists() {
+function exists() {
   type "$1" &> /dev/null;
 }
 
-install_packages() {
-  for p in "${packages[@]}"; do
-    if hash "$p" 2>/dev/null; then
-      echo "$p is installed"
-    else
-      echo "$p is not installed"
-      sudo -S pacman -S "$1" || echo "$p failed to install"
-      echo "---------------------------------------------------------"
-      echo "Done "
-      echo "---------------------------------------------------------"
-    fi
-  done
+function join_by() {
+  local IFS="$1"
+  shift
+  echo "$*"
+}
+
+function install_packages() {
+  local p=$(join_by " " "${packages[@]}")
+  sudo -S pacman -S $p
 }
 
 
-create_dir() {
+function create_dir() {
   if [ ! -d "$1" ]; then
     echo "Creating $1"
     mkdir -p $1
