@@ -40,7 +40,7 @@ function build_neovim() {
   cd neovim
   make CMAKE_BUILD_TYPE=Development
   make CMAKE_INSTALL_PREFIX=$HOME/local/nvim install
-  ln -s $HOME/local/nvim /usr/local/bin
+  sudo ln -s $HOME/local/nvim /usr/local/bin
   sudo make CMAKE_INSTALL_PREFIX=/opt/nvim install
   sudo ln -s /opt/nvim/bin/nvim /usr/local/bin
 
