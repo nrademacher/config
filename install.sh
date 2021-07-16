@@ -44,9 +44,6 @@ function build_neovim() {
 
   cd "$HOME" || exit
 
-  echo 'done'
-  echo "---------------------------------------------------------"
-
   return 0
 }
 
@@ -71,6 +68,7 @@ function run_setup_config() {
   sudo usermod -a -G docker "$USER"
   sudo systemctl start docker
   sudo systemctl enable docker
+  sudo chmod 666 /var/run/docker.sock
 
   # Clone my dotfiles repo into ~/.dotfiles/ if needed
   echo "dotfiles -------------------------------------------------"
@@ -116,9 +114,9 @@ function run_secondary_installs() {
   ~/.fzf/install
 
   echo "Installing zsh plugins (powerlevel10k prompt, syntax highlighting, autosuggestions)"
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/local/share/powerlevel10k
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/plugins/powerlevel10k
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/zsh/plugins/zsh-autosuggestions
 
   return 0
 }

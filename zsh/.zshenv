@@ -10,7 +10,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export TERMINAL="kitty"
+export SHELL="$(which zsh)"
 
 export VISUAL="nvim"
 export EDITOR="nvim"
@@ -18,6 +18,7 @@ export USE_EDITOR=$EDITOR
 
 path+=(
   "/usr/local/bin"
+  "$HOME/local/nvim/bin"
   "$HOME/.npm/bin"
   "$HOME/.local/bin"
 )
