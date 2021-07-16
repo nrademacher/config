@@ -3,14 +3,12 @@
 packages=(
   "anki"
   "bat"
-  "calibre"
   "clang"
   "cmake"
   "deno"
   "docker"
   "github-cli"
   "kitty"
-  "lynx"
   "ripgrep"
   "tree"
   "ttf-fira-code"
@@ -26,6 +24,9 @@ function join_by() {
 }
 
 function install_packages() {
+  echo "---------------------------------------------------------"
+  echo "Installing packages..."
+
   local p
   p=$(join_by " " "${packages[@]}")
   sudo -S pacman -S "$p"
@@ -46,10 +47,13 @@ function build_neovim() {
 
   cd "$HOME" || exit
 
+  echo 'done'
+  echo "---------------------------------------------------------"
+
   return 0
 }
 
-function run_install_script() {
+function run_primary_installs() {
   echo "Starting install script, please grant me sudo access..."
   sudo -v
 
@@ -58,8 +62,6 @@ function run_install_script() {
   
   install_packages
   build_neovim
-
-  echo "Installs successful."
 
   return 0
 }
@@ -99,17 +101,24 @@ function run_setup_config() {
 
   $DOTFILES/install
 
-  # Install packer (nvim package manager)
+  return 0
+}
+
+function run_secondary_installs() {
+  echo "---------------------------------------------------------"
+  echo "Installing plugins and package managers..."
+
+  echo "Installing packer.nvim (neovim package manager)"
   git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-  # Install n (node version manager)
+  echo "Installing n (nodejs version manager)"
   curl -L https://git.io/n-install | zsh
 
-  # Install fzf
+  echo "Installing fzf (CLI fuzzy finder)"
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
 
-  # Get zsh plugins
+  echo "Installing zsh plugins (powerlevel10k prompt, syntax highlighting, autosuggestions)"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/local/share/powerlevel10k
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions
@@ -117,15 +126,13 @@ function run_setup_config() {
   return 0
 }
 
-
 function main() {
-  run_install_script
+  run_primary_installs
   run_setup_config
+  run_secondary_installs
 
-  echo 'done'
-  echo "---------------------------------------------------------"
   echo "All done!"
-  echo "Cheers"
+  echo "Have fun"
   echo "---------------------------------------------------------"
 
   exit 0
