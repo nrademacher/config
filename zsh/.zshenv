@@ -16,6 +16,12 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 export USE_EDITOR=$EDITOR
 
+path+=(
+  "/usr/local/bin"
+  "$HOME/.npm/bin"
+  "$HOME/.local/bin"
+)
+
 if [ -d "$HOME/bin" ] ; then
   path+=("$HOME/bin")
 fi

@@ -22,11 +22,14 @@ function join_by() {
   local IFS="$1"
   shift
   echo "$*"
+
+  return 0
 }
 
 function install_packages() {
-  local p=$(join_by " " "${packages[@]}")
-  sudo -S pacman -S $p
+  local p
+  p=$(join_by " " "${packages[@]}")
+  sudo -S pacman -S "$p"
 
   return 0
 }
@@ -37,12 +40,10 @@ function build_neovim() {
   echo "Building neovim from source..."
   
   git clone https://github.com/neovim/neovim.git
-  cd neovim
+  cd neovim || exit
   make CMAKE_BUILD_TYPE=Development
-  make CMAKE_INSTALL_PREFIX=$HOME/local/nvim install
-  sudo ln -s $HOME/local/nvim /usr/local/bin
-  sudo make CMAKE_INSTALL_PREFIX=/opt/nvim install
-  sudo ln -s /opt/nvim/bin/nvim /usr/local/bin
+  make CMAKE_INSTALL_PREFIX="$HOME"/local/nvim install
+  sudo ln -s "$HOME"/local/nvim /usr/local/bin
 
   cd "$HOME" || exit
 
@@ -59,27 +60,15 @@ function run_install_script() {
   install_packages
   build_neovim
 
-  # Install packer.nvim
-  git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-  # Install n node version manager program
-  curl -L https://git.io/n-install | bash
-
-  # Install fzf
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
-
-  # Get zsh plugins
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/local/share/powerlevel10k
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions
-
   echo "Installs successful."
 
   return 0
 }
 
 function run_setup_config() {
+  echo "---------------------------------------------------------"
+  echo "Configuring setup..."
+
   # Set up docker
   sudo usermod -a -G docker $USER
   sudo systemctl start docker
@@ -110,6 +99,21 @@ function run_setup_config() {
   chsh -s "$(which zsh)"
 
   $DOTFILES/install
+
+  # Install packer (nvim package manager)
+  git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+  # Install n (node version manager)
+  curl -L https://git.io/n-install | zsh
+
+  # Install fzf
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+
+  # Get zsh plugins
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/local/share/powerlevel10k
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/local/share/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions /usr/local/share/zsh-autosuggestions
 
   return 0
 }
