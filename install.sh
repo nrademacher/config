@@ -19,16 +19,13 @@ function join_by() {
   local IFS="$1"
   shift
   echo "$*"
-
-  return 0
 }
 
 function install_packages() {
   echo "---------------------------------------------------------"
   echo "Installing packages..."
 
-  local p
-  p=$(join_by " " "${packages[@]}")
+  local p=$(join_by " " "${packages[@]}")
   sudo -S pacman -S "$p"
 
   return 0
@@ -71,7 +68,7 @@ function run_setup_config() {
   echo "Configuring setup..."
 
   # Set up docker
-  sudo usermod -a -G docker $USER
+  sudo usermod -a -G docker "$USER"
   sudo systemctl start docker
   sudo systemctl enable docker
 
@@ -99,7 +96,7 @@ function run_setup_config() {
   echo "---------------------------------------------------------"
   chsh -s "$(which zsh)"
 
-  $DOTFILES/install
+  "$DOTFILES"/install
 
   return 0
 }
