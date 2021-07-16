@@ -7,6 +7,7 @@ packages=(
   "cmake"
   "deno"
   "docker"
+  "firefox-developer-edition"
   "github-cli"
   "kitty"
   "ripgrep"
