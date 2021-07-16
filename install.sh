@@ -9,7 +9,6 @@ packages=(
   "deno"
   "docker"
   "github-cli"
-  "go"
   "kitty"
   "lynx"
   "ripgrep"
