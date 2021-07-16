@@ -26,6 +26,7 @@ function install_packages() {
 	echo "---------------------------------------------------------"
 	echo "Installing packages..."
 
+	sudo -S pacman -Syu
 	local p=$(join_by " " "${packages[@]}")
 	sudo -S pacman -S $p
 
@@ -50,7 +51,7 @@ function build_neovim() {
 
 function run_primary_installs() {
 	echo "Starting install script, please grant me sudo access..."
-	sudo -v
+	sudo -S -v
 
 	# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
 	while true; do
