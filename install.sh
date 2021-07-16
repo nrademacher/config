@@ -26,7 +26,7 @@ function install_packages() {
   echo "Installing packages..."
 
   local p=$(join_by " " "${packages[@]}")
-  sudo -S pacman -S "$p"
+  sudo -S pacman -S $p
 
   return 0
 }
