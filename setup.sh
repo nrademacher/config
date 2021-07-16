@@ -1,137 +1,140 @@
 #!/bin/bash
 
 packages=(
-  "anki"
-  "bat"
-  "clang"
-  "cmake"
-  "deno"
-  "docker"
-  "firefox-developer-edition"
-  "github-cli"
-  "kitty"
-  "ripgrep"
-  "tree"
-  "ttf-fira-code"
-  "zsh"
+	"anki"
+	"bat"
+	"clang"
+	"cmake"
+	"deno"
+	"docker"
+	"firefox-developer-edition"
+	"github-cli"
+	"kitty"
+	"ripgrep"
+	"tree"
+	"ttf-fira-code"
+	"zsh"
 )
 
 function join_by() {
-  local IFS="$1"
-  shift
-  echo "$*"
+	local IFS="$1"
+	shift
+	echo "$*"
 }
 
 function install_packages() {
-  echo "---------------------------------------------------------"
-  echo "Installing packages..."
+	echo "---------------------------------------------------------"
+	echo "Installing packages..."
 
-  local p=$(join_by " " "${packages[@]}")
-  sudo -S pacman -S $p
+	local p=$(join_by " " "${packages[@]}")
+	sudo -S pacman -S $p
 
-  return 0
+	return 0
 }
 
 # Build neovim from source
 function build_neovim() {
-  echo "---------------------------------------------------------"
-  echo "Building neovim from source..."
-  
-  git clone https://github.com/neovim/neovim.git
-  cd neovim || exit
-  make CMAKE_BUILD_TYPE=Development
-  make CMAKE_INSTALL_PREFIX="$HOME"/local/nvim install
-  sudo ln -s "$HOME"/local/nvim /usr/local/bin
+	echo "---------------------------------------------------------"
+	echo "Building neovim from source..."
 
-  cd "$HOME" || exit
+	git clone https://github.com/neovim/neovim.git
+	cd neovim || exit
+	make CMAKE_BUILD_TYPE=Development
+	make CMAKE_INSTALL_PREFIX="$HOME"/local/nvim install
+	sudo ln -s "$HOME"/local/nvim /usr/local/bin
 
-  return 0
+	cd "$HOME" || exit
+
+	return 0
 }
 
 function run_primary_installs() {
-  echo "Starting install script, please grant me sudo access..."
-  sudo -v
+	echo "Starting install script, please grant me sudo access..."
+	sudo -v
 
-  # Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
-  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-  
-  install_packages
-  build_neovim
+	# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done 2>/dev/null &
 
-  return 0
+	install_packages
+	build_neovim
+
+	return 0
 }
 
 function run_setup_config() {
-  echo "---------------------------------------------------------"
-  echo "Configuring setup..."
+	echo "---------------------------------------------------------"
+	echo "Configuring setup..."
 
-  # Set up docker
-  sudo usermod -a -G docker "$USER"
-  sudo systemctl start docker
-  sudo systemctl enable docker
-  sudo chmod 666 /var/run/docker.sock
+	# Set up docker
+	sudo usermod -a -G docker "$USER"
+	sudo systemctl start docker
+	sudo systemctl enable docker
+	sudo chmod 666 /var/run/docker.sock
 
-  # Clone my dotfiles repo into ~/.dotfiles/ if needed
-  echo "dotfiles -------------------------------------------------"
+	# Clone my dotfiles repo into ~/.dotfiles/ if needed
+	echo "dotfiles -------------------------------------------------"
 
-  export DOTFILES="$HOME/.dotfiles"
+	export DOTFILES="$HOME/.dotfiles"
 
-  if [ -f "$DOTFILES" ]; then
-    echo "Dotfiles have already been cloned into the home dir"
-  else
-    echo "Cloning dotfiles"
-    git clone https://github.com/nrademacher/dotfiles.git ~/.dotfiles
-  fi
+	if [ -f "$DOTFILES" ]; then
+		echo "Dotfiles have already been cloned into the home dir"
+	else
+		echo "Cloning dotfiles"
+		git clone https://github.com/nrademacher/dotfiles.git ~/.dotfiles
+	fi
 
-  cd "$DOTFILES" || "Didn't cd into dotfiles this will be bad :("
-  git submodule update --init --recursive
+	cd "$DOTFILES" || "Didn't cd into dotfiles this will be bad :("
+	git submodule update --init --recursive
 
-  cd "$HOME" || exit
-  echo "---------------------------------------------------------"
-  echo "You'll need to log out for this to take effect"
+	cd "$HOME" || exit
+	echo "---------------------------------------------------------"
+	echo "You'll need to log out for this to take effect"
 
-  "$DOTFILES"/install
+	"$DOTFILES"/install
 
-  echo "---------------------------------------------------------"
-  echo "Changing to zsh"
-  echo "---------------------------------------------------------"
-  chsh -s "$(which zsh)"
+	echo "---------------------------------------------------------"
+	echo "Changing to zsh"
+	echo "---------------------------------------------------------"
+	chsh -s "$(which zsh)"
 
-  return 0
+	return 0
 }
 
 function run_secondary_installs() {
-  echo "---------------------------------------------------------"
-  echo "Installing plugins and package managers..."
+	echo "---------------------------------------------------------"
+	echo "Installing plugins and package managers..."
 
-  echo "Installing packer.nvim (neovim package manager)"
-  git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	echo "Installing packer.nvim (neovim package manager)"
+	git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-  echo "Installing n (nodejs version manager)"
-  curl -L https://git.io/n-install | bash
+	echo "Installing n (nodejs version manager)"
+	curl -L https://git.io/n-install | bash
 
-  echo "Installing fzf (CLI fuzzy finder)"
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+	echo "Installing fzf (CLI fuzzy finder)"
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
 
-  echo "Installing zsh plugins (powerlevel10k prompt, syntax highlighting, autosuggestions)"
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/plugins/powerlevel10k
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/plugins/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/zsh/plugins/zsh-autosuggestions
+	echo "Installing zsh plugins (powerlevel10k prompt, syntax highlighting, autosuggestions)"
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/plugins/powerlevel10k
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/zsh/plugins/zsh-autosuggestions
 
-  return 0
+	return 0
 }
 
 function main() {
-  run_primary_installs
-  run_setup_config
-  run_secondary_installs
+	run_primary_installs
+	run_setup_config
+	run_secondary_installs
 
-  echo "---------------------------------------------------------"
-  echo "All done! Have fun"
+	echo "---------------------------------------------------------"
+	echo "All done! Have fun"
 
-  exit 0
+	exit 0
 }
 
 main
-
