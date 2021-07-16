@@ -90,12 +90,12 @@ function run_setup_config() {
   echo "---------------------------------------------------------"
   echo "You'll need to log out for this to take effect"
 
+  "$DOTFILES"/install
+
   echo "---------------------------------------------------------"
   echo "Changing to zsh"
   echo "---------------------------------------------------------"
   chsh -s "$(which zsh)"
-
-  "$DOTFILES"/install
 
   return 0
 }
@@ -108,7 +108,7 @@ function run_secondary_installs() {
   git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
   echo "Installing n (nodejs version manager)"
-  curl -L https://git.io/n-install | zsh
+  curl -L https://git.io/n-install | bash
 
   echo "Installing fzf (CLI fuzzy finder)"
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -127,9 +127,8 @@ function main() {
   run_setup_config
   run_secondary_installs
 
-  echo "All done!"
-  echo "Have fun"
   echo "---------------------------------------------------------"
+  echo "All done! Have fun"
 
   exit 0
 }
