@@ -51,7 +51,7 @@ function build_neovim() {
 
 function run_primary_installs() {
 	echo "Starting install script, please grant me sudo access..."
-	sudo -S -v
+	sudo -v
 
 	# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
 	while true; do
