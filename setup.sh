@@ -11,7 +11,6 @@ packages=(
 	"github-cli"
 	"jq"
 	"kitty"
-	"pulseaudio"
 	"ripgrep"
 	"tree"
 	"ttf-fira-code"
