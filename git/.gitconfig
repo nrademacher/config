@@ -52,6 +52,6 @@
 [rerere]
   enabled = true
 [hub]
-  protocol = ssh
+  protocol = https
 [init]
   defaultBranch = main
