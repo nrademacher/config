@@ -59,6 +59,11 @@ alias gcb="git checkout -b"
 alias gstp="git stash pop"
 alias gsts="git stash show -p"
 
+# Util functions
+clear() {
+  printf "\e[H\e[2J"  
+}
+
 bindkey -v
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

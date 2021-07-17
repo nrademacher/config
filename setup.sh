@@ -1,19 +1,23 @@
 #!/bin/bash
 
+set -eu -o pipefail
+
 packages=(
-	"anki"
 	"bat"
 	"clang"
 	"cmake"
-	"deno"
 	"docker"
 	"firefox-developer-edition"
 	"github-cli"
+	"jq"
 	"kitty"
+	"pulseaudio"
 	"ripgrep"
 	"tree"
 	"ttf-fira-code"
 	"zsh"
+	"zsh-autosuggestions"
+	"zsh-syntax-highlighting"
 )
 
 function join_by() {
@@ -43,7 +47,6 @@ function build_neovim() {
 	make CMAKE_BUILD_TYPE=Development
 	make CMAKE_INSTALL_PREFIX="$HOME"/local/nvim install
 	sudo ln -s "$HOME"/local/nvim /usr/local/bin
-
 	cd "$HOME" || exit
 
 	return 0
@@ -119,10 +122,8 @@ function run_secondary_installs() {
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
 
-	echo "Installing zsh plugins (powerlevel10k prompt, syntax highlighting, autosuggestions)"
+	echo "Installing powerlevel10k (zsh prompt)"
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/plugins/powerlevel10k
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/plugins/zsh-syntax-highlighting
-	git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/zsh/plugins/zsh-autosuggestions
 
 	return 0
 }
