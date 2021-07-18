@@ -3,6 +3,7 @@
 set -eu -o pipefail
 
 packages=(
+	"anki"
 	"bat"
 	"clang"
 	"cmake"
@@ -10,10 +11,12 @@ packages=(
 	"feh"
 	"firefox-developer-edition"
 	"github-cli"
+	"go"
 	"jq"
 	"kitty"
 	"lynx"
 	"ripgrep"
+	"shellcheck"
 	"tree"
 	"ttf-fira-code"
 	"xclip"
