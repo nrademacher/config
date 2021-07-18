@@ -14,6 +14,7 @@ packages=(
 	"ripgrep"
 	"tree"
 	"ttf-fira-code"
+	"xclip"
 	"zsh"
 	"zsh-autosuggestions"
 	"zsh-syntax-highlighting"
