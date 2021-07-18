@@ -13,7 +13,7 @@ general {
 
 order += "disk /"
 order += "wireless _first_"
-order += "battery all"
+order += "battery 1"
 order += "load"
 order += "tztime local"
 
@@ -22,8 +22,13 @@ wireless _first_ {
         format_down = "W: down"
 }
 
-battery all {
+# battery all {
+#         format = "%status %percentage %remaining"
+# }
+
+battery 1 {
         format = "%status %percentage %remaining"
+        path = "/sys/class/power_supply/axp288_fuel_gauge/uevent"
 }
 
 tztime local {
