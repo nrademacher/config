@@ -18,6 +18,7 @@
     ~/.gitconfig: git/.gitconfig
     ~/.gitmessage: git/.gitmessage
     ~/.gitignore_global: git/.gitignore_global
+    ~/bin: bin
     ~/.config/nvim: .config/nvim
     ~/.config/i3status: .config/i3status
     ~/.config/kitty:
