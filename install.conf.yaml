@@ -15,6 +15,7 @@
     ~/.Xresources: .Xresources
     ~/.zshrc: zsh/.zshrc
     ~/.zshenv: zsh/.zshenv
+    ~/aliases.zsh: zsh/aliases.zsh
     ~/.gitconfig: git/.gitconfig
     ~/.gitmessage: git/.gitmessage
     ~/.gitignore_global: git/.gitignore_global

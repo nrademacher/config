@@ -11,6 +11,7 @@ packages=(
 	"github-cli"
 	"jq"
 	"kitty"
+	"lynx"
 	"ripgrep"
 	"tree"
 	"ttf-fira-code"
