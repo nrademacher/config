@@ -21,7 +21,6 @@ packages=(
 	"shfmt"
 	"tmux"
 	"tree"
-	"ttf-fira-code"
 	"xclip"
 	"yarn"
 	"yq"
