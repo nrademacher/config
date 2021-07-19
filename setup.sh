@@ -13,10 +13,12 @@ packages=(
 	"github-cli"
 	"go"
 	"jq"
-	"kitty"
 	"lynx"
+	"prettier"
 	"ripgrep"
 	"shellcheck"
+	"shfmt"
+	"tmux"
 	"tree"
 	"ttf-fira-code"
 	"xclip"
@@ -39,6 +41,18 @@ function install_packages() {
 	sudo -S pacman -Syu
 	local p=$(join_by " " "${packages[@]}")
 	sudo -S pacman -S $p
+
+	return 0
+}
+
+function build_st() {
+	echo "---------------------------------------------------------"
+	echo "Building st from source..."
+
+	git clone https://github.com/LukeSmithxyz/st
+	cd st || exit
+	make install
+	cd "$HOME" || exit
 
 	return 0
 }
@@ -70,6 +84,7 @@ function run_primary_installs() {
 	done 2>/dev/null &
 
 	install_packages
+	build_st
 	build_neovim
 
 	return 0
