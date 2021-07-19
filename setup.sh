@@ -43,6 +43,13 @@ function install_packages() {
 	local p=$(join_by " " "${packages[@]}")
 	sudo -S pacman -S $p
 
+	git clone https://aur.archlinux.org/nerd-fonts-fira-code.git
+	cd nerd-fonts-fira-code || exit
+	makepkg
+	sudo pacman -U nerd-fonts-fira-code-2.1.0-2-any.pkg.tar.zst
+	cd "$HOME" || exit
+	rm -r nerd-fonts-fira-code
+
 	return 0
 }
 
@@ -58,7 +65,6 @@ function build_st() {
 	return 0
 }
 
-# Build neovim from source
 function build_neovim() {
 	echo "---------------------------------------------------------"
 	echo "Building neovim from source..."
@@ -69,6 +75,7 @@ function build_neovim() {
 	make CMAKE_INSTALL_PREFIX="$HOME"/local/nvim install
 	sudo ln -s "$HOME"/local/nvim /usr/local/bin
 	cd "$HOME" || exit
+	rm -r neovim
 
 	return 0
 }
@@ -154,6 +161,9 @@ function run_secondary_installs() {
 }
 
 function main() {
+	echo "Starting setup script."
+	echo "This will take a while. You may want to get coffee or take a walk :)"
+
 	run_primary_installs
 	run_setup_config
 	run_secondary_installs
