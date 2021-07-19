@@ -8,6 +8,7 @@ packages=(
 	"clang"
 	"cmake"
 	"docker"
+	"docker-compose"
 	"feh"
 	"firefox-developer-edition"
 	"github-cli"
@@ -29,6 +30,12 @@ packages=(
 	"zsh-syntax-highlighting"
 )
 
+aur_packages=(
+	"libxft-bgra"
+	"nerd-fonts-fira-code"
+	"system76-power"
+)
+
 function join_by() {
 	local IFS="$1"
 	shift
@@ -38,19 +45,14 @@ function join_by() {
 function build_and_install_aur_packages() {
 	echo "Building and installing packages from AUR..."
 
-	git clone https://aur.archlinux.org/nerd-fonts-fira-code.git
-	cd nerd-fonts-fira-code || exit
-	makepkg
-	sudo pacman -U nerd-fonts-fira-code*
-	cd "$HOME" || exit
-	rm -r nerd-fonts-fira-code
-
-	git clone https://aur.archlinux.org/libxft-bgra.git
-	cd libxft-bgra || exit
-	makepkg
-	sudo pacman -U libxft-bgra*
-	cd "$HOME" || exit
-	rm -r libxft-bgra
+	for pkg in "${aur_packages[@]}"; do
+		git clone https://aur.archlinux.org/"$pkg".git
+		cd $pkg || exit
+		makepkg
+		sudo pacman -U $pkg*
+		cd "$HOME" || exit
+		rm -r $pkg
+	done
 
 	return 0
 }
