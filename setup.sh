@@ -5,6 +5,7 @@ set -eu -o pipefail
 packages=(
 	"anki"
 	"bat"
+	"calibre"
 	"clang"
 	"cmake"
 	"docker"
