@@ -14,6 +14,7 @@ packages=(
 	"go"
 	"jq"
 	"lynx"
+	"noto-fonts-emoji"
 	"prettier"
 	"ripgrep"
 	"shellcheck"
@@ -35,6 +36,26 @@ function join_by() {
 	echo "$*"
 }
 
+function build_and_install_aur_packages() {
+	echo "Building and installing packages from AUR..."
+
+	git clone https://aur.archlinux.org/nerd-fonts-fira-code.git
+	cd nerd-fonts-fira-code || exit
+	makepkg
+	sudo pacman -U nerd-fonts-fira-code*
+	cd "$HOME" || exit
+	rm -r nerd-fonts-fira-code
+
+	git clone https://aur.archlinux.org/libxft-bgra.git
+	cd libxft-bgra || exit
+	makepkg
+	sudo pacman -U libxft-bgra*
+	cd "$HOME" || exit
+	rm -r libxft-bgra
+
+	return 0
+}
+
 function install_packages() {
 	echo "---------------------------------------------------------"
 	echo "Installing packages..."
@@ -43,12 +64,7 @@ function install_packages() {
 	local p=$(join_by " " "${packages[@]}")
 	sudo -S pacman -S $p
 
-	git clone https://aur.archlinux.org/nerd-fonts-fira-code.git
-	cd nerd-fonts-fira-code || exit
-	makepkg
-	sudo pacman -U nerd-fonts-fira-code-2.1.0-2-any.pkg.tar.zst
-	cd "$HOME" || exit
-	rm -r nerd-fonts-fira-code
+	build_and_install_aur_packages
 
 	return 0
 }
@@ -161,8 +177,8 @@ function run_secondary_installs() {
 }
 
 function main() {
-	echo "Starting setup script."
-	echo "This will take a while. You may want to get coffee or take a walk :)"
+	echo "Warning: This will take a while."
+	echo "You may want to get coffee or take a walk :)"
 
 	run_primary_installs
 	run_setup_config
