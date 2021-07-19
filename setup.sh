@@ -22,6 +22,7 @@ packages=(
 	"tree"
 	"ttf-fira-code"
 	"xclip"
+	"yarn"
 	"yq"
 	"zsh"
 	"zsh-autosuggestions"
@@ -145,6 +146,9 @@ function run_secondary_installs() {
 
 	echo "Installing powerlevel10k (zsh prompt)"
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/plugins/powerlevel10k
+
+	echo "Installing tmux pomodoro timer"
+	go get github.com/rwxrob/cmdbox-pomo/pomo
 
 	return 0
 }

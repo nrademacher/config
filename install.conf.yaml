@@ -4,25 +4,26 @@
       relink: true
 
 - create:
-    - ~/.ssh
     - ~/.config
+    - ~/.ssh
     - ~/projects
 
 - clean: ["~"]
 
 - link:
-    ~/.profile: .profile
     ~/.Xresources: .Xresources
-    ~/.zshrc: zsh/.zshrc
-    ~/.zshenv: zsh/.zshenv
-    ~/aliases.zsh: zsh/aliases.zsh
+    ~/.config/i3status: .config/i3status
+    ~/.config/nvim: .config/nvim
     ~/.gitconfig: git/.gitconfig
-    ~/.gitmessage: git/.gitmessage
     ~/.gitignore_global: git/.gitignore_global
+    ~/.gitmessage: git/.gitmessage
+    ~/.profile: .profile
+    ~/.tmux.conf: .tmux.conf
+    ~/.zshenv: zsh/.zshenv
+    ~/.zshrc: zsh/.zshrc
+    ~/aliases.zsh: zsh/aliases.zsh
     ~/anki: anki
     ~/bin: bin
-    ~/.config/nvim: .config/nvim
-    ~/.config/i3status: .config/i3status
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
