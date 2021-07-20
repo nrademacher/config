@@ -13,17 +13,18 @@
 
 - link:
     ~/.Xresources: .Xresources
+    ~/.aliases: zsh/.aliases
     ~/.config/i3status: .config/i3status
     ~/.config/nvim: .config/nvim
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
     ~/.gitmessage: git/.gitmessage
     ~/.local/bin: .local/bin
+    ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.profile: .profile
     ~/.tmux.conf: .tmux.conf
     ~/.zshenv: zsh/.zshenv
     ~/.zshrc: zsh/.zshrc
-    ~/aliases.zsh: zsh/aliases.zsh
     ~/anki: anki
 
 - shell:

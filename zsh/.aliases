@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Util aliases
 alias '?'='duck'
 alias '??'='google'

@@ -14,7 +14,7 @@ source "$PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
 source "$PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-source ~/aliases.zsh
+[[ ! -f ~/.aliases ]] || source ~/.aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
