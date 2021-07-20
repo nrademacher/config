@@ -14,7 +14,6 @@ packages=(
 	"firefox-developer-edition"
 	"github-cli"
 	"go"
-	"jq"
 	"lynx"
 	"noto-fonts-emoji"
 	"prettier"
@@ -35,6 +34,7 @@ aur_packages=(
 	"libxft-bgra"
 	"nerd-fonts-fira-code"
 	"system76-power"
+	"ttyper"
 )
 
 function join_by() {

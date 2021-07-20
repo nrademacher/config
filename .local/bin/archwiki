@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec lynx "https://wiki.archlinux.org/index.php?search=$*"
+

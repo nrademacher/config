@@ -1,7 +1,10 @@
+#!/bin/sh
+
 # Util aliases
 alias '?'='duck'
 alias '??'='google'
-alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/aliases.zsh' # Quick access to the aliases.zsh file
+alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
+alias awiki='archwiki'
 alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
@@ -30,6 +33,7 @@ alias gcb='git checkout -b'
 alias gcd="git checkout development"
 alias gcl='git clone --recurse-submodules'
 alias gcm='git checkout $(git_main_branch)'
+alias gcmsg='git commit -m'
 alias gco="git checkout"
 alias gd="git diff"
 alias gd='git diff'
