@@ -90,8 +90,8 @@ function build_neovim() {
 	git clone https://github.com/neovim/neovim.git
 	cd neovim || exit
 	make CMAKE_BUILD_TYPE=Development
-	make CMAKE_INSTALL_PREFIX="$HOME"/local/nvim install
-	sudo ln -s "$HOME"/local/nvim /usr/local/bin
+	make CMAKE_INSTALL_PREFIX="$HOME"/.local/bin install
+	sudo ln -s "$HOME"/.local/bin /usr/local/bin
 	cd "$HOME" || exit
 	rm -r neovim
 
@@ -99,15 +99,8 @@ function build_neovim() {
 }
 
 function run_primary_installs() {
-	echo "Starting install script, please grant me sudo access..."
-	sudo -v
-
-	# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
-	while true; do
-		sudo -n true
-		sleep 60
-		kill -0 "$$" || exit
-	done 2>/dev/null &
+	echo "---------------------------------------------------------"
+	echo "Running primary installs (pacman packages, st, neovim)..."
 
 	install_packages
 	build_st
@@ -181,6 +174,15 @@ function run_secondary_installs() {
 function main() {
 	echo "Warning: This will take a while."
 	echo "You may want to get coffee or take a walk :)"
+	echo "But first, please grant necessary sudo access for installs..."
+	sudo -v
+
+	# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done 2>/dev/null &
 
 	run_primary_installs
 	run_setup_config
