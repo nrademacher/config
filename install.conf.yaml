@@ -5,6 +5,7 @@
 
 - create:
     - ~/.config
+    - ~/.local
     - ~/.ssh
     - ~/projects
 
@@ -17,13 +18,13 @@
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
     ~/.gitmessage: git/.gitmessage
+    ~/.local/bin: .local/bin
     ~/.profile: .profile
     ~/.tmux.conf: .tmux.conf
     ~/.zshenv: zsh/.zshenv
     ~/.zshrc: zsh/.zshrc
     ~/aliases.zsh: zsh/aliases.zsh
     ~/anki: anki
-    ~/bin: bin
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
