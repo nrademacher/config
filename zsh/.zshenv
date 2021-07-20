@@ -37,13 +37,13 @@ if test -x /usr/bin/lesspipe; then
   export LESSCLOSE="/usr/bin/lesspipe %s %s";
 fi
 
-export LESS_TERMCAP_mb="[35m" # magenta
-export LESS_TERMCAP_md="[33m" # yellow
-export LESS_TERMCAP_me="" # "0m"
-export LESS_TERMCAP_se="" # "0m"
-export LESS_TERMCAP_so="[34m" # blue
-export LESS_TERMCAP_ue="" # "0m"
-export LESS_TERMCAP_us="[4m"  # underline
+export LESS_TERMCAP_mb="[35m"
+export LESS_TERMCAP_md="[33m"
+export LESS_TERMCAP_me=""
+export LESS_TERMCAP_se=""
+export LESS_TERMCAP_so="[34m"
+export LESS_TERMCAP_ue=""
+export LESS_TERMCAP_us="[4m"
 
 # go
 if which go >/dev/null; then
