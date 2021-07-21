@@ -4,7 +4,7 @@
 alias '?'='duck'
 alias '??'='google'
 alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
-alias awiki='archwiki'
+alias aw='archwiki'
 alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
