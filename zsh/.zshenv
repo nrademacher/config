@@ -19,6 +19,7 @@ export USE_EDITOR=$EDITOR
 path+=(
   "/usr/local/bin"
   "$HOME/local/nvim/bin"
+  "$HOME/.cargo/bin"
   "$HOME/.npm/bin"
   "$HOME/.local/bin"
 )
