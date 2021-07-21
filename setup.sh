@@ -20,6 +20,7 @@ packages=(
 	"ripgrep"
 	"shellcheck"
 	"shfmt"
+	"spotifyd"
 	"tmux"
 	"tree"
 	"xclip"
@@ -33,6 +34,7 @@ packages=(
 aur_packages=(
 	"libxft-bgra"
 	"nerd-fonts-fira-code"
+	"spotify-tui"
 	"system76-power"
 	"ttyper"
 )
@@ -118,6 +120,10 @@ function run_setup_config() {
 	sudo systemctl start docker
 	sudo systemctl enable docker
 	sudo chmod 666 /var/run/docker.sock
+
+	# Start/enable spotifyd
+	systemctl --user start spotifyd.service
+	systemctl --user enable spotifyd.service
 
 	# Clone my dotfiles repo into ~/.dotfiles/ if needed
 	echo "dotfiles -------------------------------------------------"
