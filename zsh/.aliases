@@ -1,24 +1,30 @@
 #!/bin/sh
 
-# Util aliases
+# Web search
 alias '?'='duck'
 alias '??'='google'
-alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
 alias aw='archwiki'
+
+# colored ls
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias ls="ls -G"
+  else
+  alias ls="ls --color=auto"
+fi
+alias l='ls -1'
+alias ll='ls -la'
+
+# nvim shortcuts
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
+# util
+alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
 alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
-if [[ "$(uname)" == "Darwin" ]]; then
-  alias ls="ls -G"
-  else
-  alias ls="ls --color"
-fi
-alias l='ls -1'
-alias ll='ls -la'
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
 alias x="exit" # Exit Terminal
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 
@@ -50,6 +56,7 @@ alias gm='git merge'
 alias gma='git merge --abort'
 alias gmom='git merge origin/$(git_main_branch)'
 alias gp='git push'
+alias gpob='git push origin $(git branch --show-current)'
 alias gpristine='git reset --hard && git clean -dffx'
 alias grbi='git rebase -i'
 alias grbm='git rebase $(git_main_branch)'

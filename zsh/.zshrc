@@ -1,6 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -14,20 +11,26 @@ source "$PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
 source "$PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-
 [[ ! -f ~/.aliases ]] || source ~/.aliases
-
 [[ ! -f ~/z.sh ]] || source ~/z.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Util functions
+# preview fzf search results with bat
+command -v bat  > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
+
+# faster/more efficient clear command
 clear() {
-printf "\e[H\e[2J"  
+  printf "\e[H\e[2J"  
 }
 
+# browse z results with fzf
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+
+# vi keybindings
 bindkey -v
 
