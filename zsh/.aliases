@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Util aliases
 alias '?'='duck'
@@ -9,6 +9,11 @@ alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias ls="ls -G"
+  else
+  alias ls="ls --color"
+fi
 alias l='ls -1'
 alias ll='ls -la'
 alias v='nvim'
