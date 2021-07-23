@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Web search
+# web search
 alias '?'='duck'
 alias '??'='google'
 alias aw='archwiki'
 
-# colored ls
+# ls dir/file colors
 if [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -G"
   else
@@ -19,7 +19,7 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
-# util
+# Util
 alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
 alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
@@ -28,7 +28,7 @@ alias grep='grep --color'
 alias x="exit" # Exit Terminal
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 
-# Git aliases
+# Git
 alias g="git"
 alias ga='git add'
 alias gaa='git add --all'
@@ -66,4 +66,16 @@ alias gss="git status -s"
 alias gst="git status"
 alias gstp="git stash pop"
 alias gsts="git stash show -p"
+
+# tmux
+alias t="tmux"
+alias tl="tmux ls"
+alias ts="tmux new -s"
+alias ta="tmux attach -t"
+alias tad="tmux attach -d -t"
+alias tksv="tmux kill-server"
+alias tkss="tmux kill-session -t"
+alias trss="tmux rename-session"
+alias tlb="tmux list-buffers"
+alias tcb="tmux choose-buffer"
 
