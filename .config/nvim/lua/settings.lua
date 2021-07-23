@@ -29,22 +29,9 @@ wo.number = true
 wo.numberwidth = 2
 o.laststatus = 2
 
---[[ require("github-theme").setup(
-  {
-    themeStyle = "light"
-  }
-) ]]
 -- o.background = "dark" -- or "light" for light mode
 
-vim.g.gruvbox_contrast_dark = "hard"
+-- vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_invert_selextion = 0
 
 vim.cmd([[colorscheme gruvbox]])
-vim.cmd([[highlight ColorColumn ctermbg=0 guibg=grey]])
-vim.cmd([[hi SignColumn guibg=none]])
-vim.cmd([[hi CursorLineNR guibg=None]])
-vim.cmd([[highlight Normal guibg=none]])
-vim.cmd([[highlight LineNr guifg=#5eacd3]])
-vim.cmd([[highlight netrwDir guifg=#5eacd3]])
-vim.cmd([[highlight qfFileName guifg=#aed75f]])
-vim.cmd([[hi TelescopeBorder guifg=#5eacd]])

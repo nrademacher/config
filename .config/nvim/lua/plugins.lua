@@ -15,6 +15,7 @@ return require("packer").startup {
 
     -- UI
     use "tjdevries/express_line.nvim"
+    use "akinsho/nvim-toggleterm.lua"
 
     -- syntax
     use "nvim-treesitter/nvim-treesitter" -- UI

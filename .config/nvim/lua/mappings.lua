@@ -85,6 +85,7 @@ map("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>")
 map("n", "<leader>cc", "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
 map("n", "[e", ":Lspsaga diagnostic_jump_next<CR>")
 map("n", "]e", ":Lspsaga diagnostic_jump_next<CR>")
+map("n", "<leader>e", ":ToggleTerm<CR>")
 map("n", "<leader>d", ":Lspsaga open_floaterm<CR>")
 map("t", "<ESC>", "<C-\\><C-n>:Lspsaga close_floaterm<CR>")
 

@@ -31,6 +31,8 @@ require("telescope").load_extension("git_worktree")
 
 require("harpoon").setup()
 
+require("toggleterm").setup()
+
 require("statusline")
 
 require("colorizer").setup()
