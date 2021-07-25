@@ -31,7 +31,8 @@ packages=(
 	"zsh-syntax-highlighting"
 )
 
-aur_packages=(
+aur_repos=(
+	"brave"
 	"libxft-bgra"
 	"nerd-fonts-fira-code"
 	"spotify-tui"
@@ -48,13 +49,13 @@ function join_by() {
 function build_and_install_aur_packages() {
 	echo "Building and installing packages from AUR..."
 
-	for pkg in "${aur_packages[@]}"; do
-		git clone https://aur.archlinux.org/"$pkg".git
-		cd $pkg || exit
+	for repo in "${aur_repos[@]}"; do
+		git clone https://aur.archlinux.org/"$repo".git
+		cd $repo || exit
 		makepkg
-		sudo pacman -U $pkg*
+		sudo pacman -U $repo*
 		cd "$HOME" || exit
-		rm -r $pkg
+		rm -r $repo
 	done
 
 	return 0

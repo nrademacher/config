@@ -15,6 +15,7 @@
     ~/.Xresources: .Xresources
     ~/.aliases: zsh/.aliases
     ~/.config/i3status: .config/i3status
+    ~/.config/lynx: .config/lynx
     ~/.config/nvim: .config/nvim
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global

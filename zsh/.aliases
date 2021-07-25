@@ -5,6 +5,11 @@ alias '?'='duck'
 alias '??'='google'
 alias aw='archwiki'
 
+# pomodoro timer (tmux)
+alias pd='pomo duration'
+alias psp='pomo stop'
+alias pst='pomo start'
+
 # ls dir/file colors
 if [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -G"
@@ -25,6 +30,7 @@ alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
+alias tree='tree -CphuN'
 alias x="exit" # Exit Terminal
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 
