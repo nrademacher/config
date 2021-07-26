@@ -23,6 +23,7 @@ packages=(
 	"spotifyd"
 	"tmux"
 	"tree"
+	"virtualbox"
 	"xclip"
 	"yarn"
 	"yq"
