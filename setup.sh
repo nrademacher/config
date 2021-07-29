@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eu -o pipefail
-
 packages=(
 	"anki"
 	"bat"
