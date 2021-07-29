@@ -33,6 +33,7 @@ packages=(
 aur_repos=(
 	"brave"
 	"libxft-bgra"
+	"neovim-git"
 	"nerd-fonts-fira-code"
 	"spotify-tui"
 	"system76-power"
@@ -85,28 +86,28 @@ function build_st() {
 	return 0
 }
 
-function build_neovim() {
-	echo "---------------------------------------------------------"
-	echo "Building neovim from source..."
+# function build_neovim() {
+# 	echo "---------------------------------------------------------"
+# 	echo "Building neovim from source..."
 
-	git clone https://github.com/neovim/neovim.git
-	cd neovim || exit
-	make CMAKE_BUILD_TYPE=Development
-	make CMAKE_INSTALL_PREFIX="$HOME"/.local/bin install
-	sudo ln -s "$HOME"/.local/bin /usr/local/bin
-	cd "$HOME" || exit
-	rm -r neovim
+# 	git clone https://github.com/neovim/neovim.git
+# 	cd neovim || exit
+# 	make CMAKE_BUILD_TYPE=Development
+# 	make CMAKE_INSTALL_PREFIX="$HOME"/.local/bin install
+# 	sudo ln -s "$HOME"/.local/bin /usr/local/bin
+# 	cd "$HOME" || exit
+# 	rm -r neovim
 
-	return 0
-}
+# 	return 0
+# }
 
 function run_primary_installs() {
 	echo "---------------------------------------------------------"
-	echo "Running primary installs (pacman packages, st, neovim)..."
+	echo "Running primary installs..."
 
 	install_packages
 	build_st
-	build_neovim
+	# build_neovim
 
 	return 0
 }
