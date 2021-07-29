@@ -27,7 +27,7 @@
     ~/.zshenv: zsh/.zshenv
     ~/.zshrc: zsh/.zshrc
     ~/anki: anki
-    ~/z.sh: z.sh
+    ~/z.sh: zsh/z.sh
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
