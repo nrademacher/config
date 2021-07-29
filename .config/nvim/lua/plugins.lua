@@ -5,13 +5,13 @@ return require("packer").startup {
     -- packer self-management
     use "wbthomason/packer.nvim"
 
-    -- git worktrees integration
+    -- integrations
     use "ThePrimeagen/git-worktree.nvim"
+    use "adelarsq/vim-hackernews"
+    use "chr4/nginx.vim"
 
-    -- themes
+    -- theme
     use "gruvbox-community/gruvbox"
-    use "pgdouyon/vim-yin-yang"
-    use "Shadorain/shadotheme"
 
     -- UI
     use "tjdevries/express_line.nvim"
@@ -30,12 +30,12 @@ return require("packer").startup {
     }
     use "onsails/lspkind-nvim"
 
-    -- telescope setup
-    use "nvim-lua/popup.nvim"
-    use "nvim-lua/plenary.nvim"
+    -- telescope
     use "jremmen/vim-ripgrep"
-    use "nvim-telescope/telescope.nvim"
+    use "nvim-lua/plenary.nvim"
+    use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
+    use "nvim-telescope/telescope.nvim"
 
     -- text manipulation
     use "b3nj5m1n/kommentary"
@@ -45,26 +45,25 @@ return require("packer").startup {
 
     -- navigation
     use "AndrewRadev/sideways.vim"
-    use "phaazon/hop.nvim"
     use "ThePrimeagen/harpoon"
+    use "phaazon/hop.nvim"
 
     -- autocompletion
     use "hrsh7th/nvim-compe"
 
     -- code snippets
     use "hrsh7th/vim-vsnip"
-    use "rafamadriz/friendly-snippets"
     use "mattn/emmet-vim"
+    use "rafamadriz/friendly-snippets"
 
     -- formatting
     use "mhartington/formatter.nvim"
     use "steelsojka/headwind.nvim"
 
     -- misc utils
+    use "antonk52/bad-practices.nvim"
     use "dstein64/vim-startuptime"
     use "norcalli/nvim-colorizer.lua"
-    use "antonk52/bad-practices.nvim"
-    use "junegunn/vim-journal"
   end,
   config = {
     git = {
