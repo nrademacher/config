@@ -49,7 +49,7 @@ function join_by() {
 function install_regular_packages() {
 	sudo -S pacman -Syu
 	local p=$(join_by " " "${packages[@]}")
-	sudo -S pacman -S $p
+	sudo pacman -S $p
 
 	return 0
 }
@@ -89,7 +89,7 @@ function build_st() {
 
 	git clone https://github.com/LukeSmithxyz/st
 	cd st || exit
-	make install
+	sudo make install
 
 	cd "$HOME" || exit
 
