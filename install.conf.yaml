@@ -14,6 +14,7 @@
 - link:
     ~/.Xresources: .Xresources
     ~/.aliases: zsh/.aliases
+    ~/.config/dunst: .config/dunst
     ~/.config/i3status: .config/i3status
     ~/.config/lynx: .config/lynx
     ~/.config/nvim: .config/nvim
