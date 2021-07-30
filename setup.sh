@@ -18,7 +18,6 @@ packages=(
 	"ripgrep"
 	"shellcheck"
 	"shfmt"
-	"spotifyd"
 	"tmux"
 	"tree"
 	"virtualbox"
@@ -35,7 +34,7 @@ aur_repos=(
 	"libxft-bgra"
 	"neovim-git"
 	"nerd-fonts-fira-code"
-	"spotify-tui"
+	"spotify"
 	"system76-power"
 	"ttyper"
 )
@@ -46,17 +45,27 @@ function join_by() {
 	echo "$*"
 }
 
-function build_and_install_aur_packages() {
-	echo "Building and installing packages from AUR..."
+function install_regular_packages() {
+	sudo -S pacman -Syu
+	local p=$(join_by " " "${packages[@]}")
+	sudo -S pacman -S $p
 
-	for repo in "${aur_repos[@]}"; do
-		git clone https://aur.archlinux.org/"$repo".git
-		cd $repo || exit
-		makepkg
-		sudo pacman -U $repo*
-		cd "$HOME" || exit
-		rm -r $repo
-	done
+	return 0
+}
+
+function install_aur_packages() {
+	echo "Installing yay wrapper for AUR installs..."
+
+	cd /opt || exit
+	sudo git clone https://aur.archlinux.org/yay.git
+	sudo chown -R $(whoami):users ./yay
+	cd yay || exit
+	makepkg -si
+
+	echo "Installing AUR packages..."
+
+	local p=$(join_by " " "${aur_repos[@]}")
+	sudo yay -S $p
 
 	return 0
 }
@@ -65,11 +74,10 @@ function install_packages() {
 	echo "---------------------------------------------------------"
 	echo "Installing packages..."
 
-	sudo -S pacman -Syu
-	local p=$(join_by " " "${packages[@]}")
-	sudo -S pacman -S $p
+	install_regular_packages
+	install_aur_packages
 
-	build_and_install_aur_packages
+	cd "$HOME" || exit
 
 	return 0
 }
@@ -81,25 +89,11 @@ function build_st() {
 	git clone https://github.com/LukeSmithxyz/st
 	cd st || exit
 	make install
+
 	cd "$HOME" || exit
 
 	return 0
 }
-
-# function build_neovim() {
-# 	echo "---------------------------------------------------------"
-# 	echo "Building neovim from source..."
-
-# 	git clone https://github.com/neovim/neovim.git
-# 	cd neovim || exit
-# 	make CMAKE_BUILD_TYPE=Development
-# 	make CMAKE_INSTALL_PREFIX="$HOME"/.local/bin install
-# 	sudo ln -s "$HOME"/.local/bin /usr/local/bin
-# 	cd "$HOME" || exit
-# 	rm -r neovim
-
-# 	return 0
-# }
 
 function run_primary_installs() {
 	echo "---------------------------------------------------------"
@@ -107,7 +101,6 @@ function run_primary_installs() {
 
 	install_packages
 	build_st
-	# build_neovim
 
 	return 0
 }
@@ -121,10 +114,6 @@ function run_setup_config() {
 	sudo systemctl start docker
 	sudo systemctl enable docker
 	sudo chmod 666 /var/run/docker.sock
-
-	# Start/enable spotifyd
-	systemctl --user start spotifyd.service
-	systemctl --user enable spotifyd.service
 
 	# Clone my dotfiles repo into ~/.dotfiles/ if needed
 	echo "dotfiles -------------------------------------------------"
