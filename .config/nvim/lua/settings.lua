@@ -31,7 +31,6 @@ o.laststatus = 2
 
 -- o.background = "dark" -- or "light" for light mode
 
--- vim.g.gruvbox_contrast_dark = "hard"
-vim.g.gruvbox_invert_selextion = 0
+vim.g.gruvbox_contrast_dark = "soft"
 
 vim.cmd([[colorscheme gruvbox]])

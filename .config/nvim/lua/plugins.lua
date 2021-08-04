@@ -7,11 +7,11 @@ return require("packer").startup {
 
     -- integrations
     use "ThePrimeagen/git-worktree.nvim"
-    use "adelarsq/vim-hackernews"
     use "chr4/nginx.vim"
 
     -- theme
     use "gruvbox-community/gruvbox"
+    use "pgdouyon/vim-yin-yang"
 
     -- UI
     use "tjdevries/express_line.nvim"
