@@ -62,14 +62,15 @@ map("n", "<leader>q", ":q<cr>")
 map("n", "<leader>Q", ":qa!<cr>")
 
 -- telescope
-map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')
-map("n", "<leader>hs", ':lua require"telescope.builtin".find_files({hidden = true})<CR>')
-map("n", "<leader>f", ':lua require"telescope.builtin".live_grep()<CR>')
-map("n", "<leader>bu", ':lua require"telescope.builtin".buffers()<CR>')
 map("n", "<leader>bm", ':lua require("telescope").extensions.bookmarks.bookmarks()<CR>')
-map("n", "<leader>g", ':lua require"telescope".extensions.git_worktree.git_worktrees()<CR>')
+map("n", "<leader>bu", ':lua require"telescope.builtin".buffers()<CR>')
+map("n", "<leader>f", ':lua require"telescope.builtin".live_grep()<CR>')
 map("n", "<leader>fh", ':lua require"telescope.builtin".help_tags()<CR>')
 map("n", "<leader>fw", ':lua require"telescope.builtin".help_tags()<CR>')
+map("n", "<leader>g", ':lua require"telescope".extensions.git_worktree.git_worktrees()<CR>')
+map("n", "<leader>hs", ':lua require"telescope.builtin".find_files({hidden = true})<CR>')
+map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')
+map("n", "<leader>tp", ":Telescope projects<CR>")
 
 -- lsp saga
 map("n", "<leader>ca", ":Lspsaga code_action<CR>")

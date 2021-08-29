@@ -27,11 +27,11 @@ telescope.setup {
 }
 
 require("git-worktree").setup()
+
 require("telescope").load_extension("git_worktree")
+require("telescope").load_extension("projects")
 
 require("harpoon").setup()
-
-require("toggleterm").setup()
 
 require("statusline")
 

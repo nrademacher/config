@@ -15,8 +15,10 @@ require("formatter").setup(
       typescript = {prettierFmt},
       typescriptreact = {prettierFmt},
       json = {prettierFmt},
+      html = {prettierFmt},
       css = {prettierFmt},
       scss = {prettierFmt},
+      svelte = {prettierFmt},
       sh = {
         function()
           return {
@@ -50,7 +52,7 @@ vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.sh,*.c,*.lua,*.json FormatWrite
+  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.svelte,*.sh,*.c,*.lua,*.json FormatWrite
 augroup END
 ]],
   true

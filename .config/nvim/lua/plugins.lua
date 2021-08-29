@@ -9,16 +9,22 @@ return require("packer").startup {
     use "ThePrimeagen/git-worktree.nvim"
     use "chr4/nginx.vim"
 
-    -- theme
+    -- themes
     use "gruvbox-community/gruvbox"
-    use "pgdouyon/vim-yin-yang"
+    use "projekt0n/github-nvim-theme"
 
     -- UI
     use "tjdevries/express_line.nvim"
-    use "akinsho/nvim-toggleterm.lua"
+    use "tpope/vim-vinegar"
+    use {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup {}
+      end
+    }
 
     -- syntax
-    use "nvim-treesitter/nvim-treesitter" -- UI
+    use "nvim-treesitter/nvim-treesitter"
 
     -- lsp setup
     use "neovim/nvim-lspconfig"
@@ -64,6 +70,17 @@ return require("packer").startup {
     use "antonk52/bad-practices.nvim"
     use "dstein64/vim-startuptime"
     use "norcalli/nvim-colorizer.lua"
+    use {
+      "AckslD/nvim-neoclip.lua",
+      config = function()
+        require("neoclip").setup(
+          {
+            history = 1000,
+            filter = nil
+          }
+        )
+      end
+    }
   end,
   config = {
     git = {
