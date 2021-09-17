@@ -26,11 +26,6 @@ telescope.setup {
   }
 }
 
-require("git-worktree").setup()
-
-require("telescope").load_extension("git_worktree")
-require("telescope").load_extension("projects")
-
 require("harpoon").setup()
 
 require("statusline")
@@ -39,7 +34,7 @@ require("colorizer").setup()
 
 require("lspkind").init()
 
-require("lspsaga").init_lsp_saga()
+-- require("lspsaga").init_lsp_saga()
 
 local function setup_servers()
   require "lspinstall".setup()

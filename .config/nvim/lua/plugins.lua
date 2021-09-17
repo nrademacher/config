@@ -5,23 +5,12 @@ return require("packer").startup {
     -- packer self-management
     use "wbthomason/packer.nvim"
 
-    -- integrations
-    use "ThePrimeagen/git-worktree.nvim"
-    use "chr4/nginx.vim"
-
     -- themes
     use "gruvbox-community/gruvbox"
-    use "projekt0n/github-nvim-theme"
 
     -- UI
     use "tjdevries/express_line.nvim"
     use "tpope/vim-vinegar"
-    use {
-      "ahmedkhalf/project.nvim",
-      config = function()
-        require("project_nvim").setup {}
-      end
-    }
 
     -- syntax
     use "nvim-treesitter/nvim-treesitter"
@@ -37,7 +26,6 @@ return require("packer").startup {
     use "onsails/lspkind-nvim"
 
     -- telescope
-    use "jremmen/vim-ripgrep"
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
@@ -50,7 +38,6 @@ return require("packer").startup {
     use "windwp/nvim-ts-autotag"
 
     -- navigation
-    use "AndrewRadev/sideways.vim"
     use "ThePrimeagen/harpoon"
     use "phaazon/hop.nvim"
 
@@ -67,20 +54,9 @@ return require("packer").startup {
     use "steelsojka/headwind.nvim"
 
     -- misc utils
+    use "AndrewRadev/sideways.vim"
     use "antonk52/bad-practices.nvim"
-    use "dstein64/vim-startuptime"
     use "norcalli/nvim-colorizer.lua"
-    use {
-      "AckslD/nvim-neoclip.lua",
-      config = function()
-        require("neoclip").setup(
-          {
-            history = 1000,
-            filter = nil
-          }
-        )
-      end
-    }
   end,
   config = {
     git = {

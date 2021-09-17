@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/nrademacher/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,147 +71,123 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["bad-practices.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/bad-practices.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/bad-practices.nvim"
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
   ["express_line.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/express_line.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/express_line.nvim"
   },
   ["formatter.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/friendly-snippets"
-  },
-  ["git-worktree.nvim"] = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/git-worktree.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   gruvbox = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
   harpoon = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/harpoon"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/harpoon"
   },
   ["headwind.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/headwind.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/headwind.nvim"
   },
   ["hop.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/hop.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
   kommentary = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["lsp-trouble.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/lsp-trouble.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lsp-trouble.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
-  },
-  ["nvim-toggleterm.lua"] = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/popup.nvim"
-  },
-  shadotheme = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/shadotheme"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["sideways.vim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/sideways.vim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/sideways.vim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-journal"] = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/vim-journal"
-  },
-  ["vim-ripgrep"] = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/vim-ripgrep"
-  },
-  ["vim-startuptime"] = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/vim-startuptime"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-vinegar"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vinegar"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vsnip"
-  },
-  ["vim-yin-yang"] = {
-    loaded = true,
-    path = "/home/nrademacher/.local/share/nvim/site/pack/packer/start/vim-yin-yang"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 
