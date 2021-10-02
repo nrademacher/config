@@ -13,18 +13,11 @@
 
 - link:
     ~/.aliases: zsh/.aliases
-    ~/.config/i3status: .config/i3status
-    ~/.config/lynx: .config/lynx
     ~/.config/nvim: .config/nvim
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitignore_global: git/.gitignore_global
-    ~/.gitmessage: git/.gitmessage
     ~/.local/bin: .local/bin
     ~/.p10k.zsh: zsh/.p10k.zsh
-    ~/.tmux.conf: .tmux.conf
     ~/.zshenv: zsh/.zshenv
     ~/.zshrc: zsh/.zshrc
-    ~/anki: anki
     ~/z.sh: zsh/z.sh
 
 - shell:

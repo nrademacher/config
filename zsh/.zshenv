@@ -7,9 +7,6 @@ export PROJECTS_DIR=$HOME/projects
 
 export MANPATH="/usr/local/man:$MANPATH"
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 export SHELL="$(which zsh)"
 
 export VISUAL="nvim"

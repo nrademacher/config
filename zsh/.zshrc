@@ -7,6 +7,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   else
   PLUGINS_DIR="/usr/share/zsh/plugins"
 fi
+
 source "$PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
 source "$PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -20,7 +21,7 @@ source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 command -v bat  > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 
 # faster/more efficient clear command
-clear() {
+c() {
   printf "\e[H\e[2J"  
 }
 
@@ -34,3 +35,4 @@ z() {
 # vi keybindings
 bindkey -v
 
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"

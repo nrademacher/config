@@ -14,6 +14,7 @@ return require("packer").startup {
 
     -- syntax
     use "nvim-treesitter/nvim-treesitter"
+    use "pantharshit00/vim-prisma"
 
     -- lsp setup
     use "neovim/nvim-lspconfig"

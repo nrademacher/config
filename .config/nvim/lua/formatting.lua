@@ -14,6 +14,7 @@ require("formatter").setup(
       javascriptreact = {prettierFmt},
       typescript = {prettierFmt},
       typescriptreact = {prettierFmt},
+      graphql = {prettierFmt},
       json = {prettierFmt},
       html = {prettierFmt},
       css = {prettierFmt},
@@ -48,11 +49,12 @@ require("formatter").setup(
     }
   }
 )
+
 vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.svelte,*.sh,*.c,*.lua,*.json FormatWrite
+  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css,*.scss,*.svelte,*.sh,*.c,*.lua,*.json FormatWrite
 augroup END
 ]],
   true
