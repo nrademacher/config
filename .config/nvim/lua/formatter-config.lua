@@ -17,9 +17,11 @@ require("formatter").setup(
       graphql = {prettierFmt},
       json = {prettierFmt},
       html = {prettierFmt},
+      prisma = {prettierFmt},
       css = {prettierFmt},
       scss = {prettierFmt},
       svelte = {prettierFmt},
+      vue = {prettierFmt},
       sh = {
         function()
           return {
@@ -54,7 +56,7 @@ vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css,*.scss,*.svelte,*.sh,*.c,*.lua,*.json FormatWrite
+  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css,*.scss,*.svelte,*.prisma,*.vue,*.sh,*.c,*.lua,*.json FormatWrite
 augroup END
 ]],
   true

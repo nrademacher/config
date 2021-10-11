@@ -1,5 +1,5 @@
-require('plugins')
 require('settings')
+require('plugins')
+require('plugins-config')
 require('mappings')
-require('plugins_config')
 

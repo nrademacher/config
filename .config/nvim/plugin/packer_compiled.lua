@@ -109,6 +109,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/kommentary"
   },
+  ["lir.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lir.nvim"
+  },
   ["lsp-trouble.nvim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lsp-trouble.nvim"
@@ -177,13 +181,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-prisma"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-prisma"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-surround"
-  },
-  ["vim-vinegar"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vinegar"
   },
   ["vim-vsnip"] = {
     loaded = true,

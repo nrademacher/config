@@ -10,7 +10,7 @@ return require("packer").startup {
 
     -- UI
     use "tjdevries/express_line.nvim"
-    use "tpope/vim-vinegar"
+    use "tamago324/lir.nvim"
 
     -- syntax
     use "nvim-treesitter/nvim-treesitter"
@@ -19,7 +19,7 @@ return require("packer").startup {
     -- lsp setup
     use "neovim/nvim-lspconfig"
     use "kabouzeid/nvim-lspinstall"
-    use "glepnir/lspsaga.nvim"
+    use "al3xfischer/lspsaga.nvim"
     use {
       "folke/lsp-trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons"

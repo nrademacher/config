@@ -33,3 +33,5 @@ o.laststatus = 2
 require("material").set() ]]
 vim.g.gruvbox_contrast_dark = "soft"
 vim.cmd([[colorscheme gruvbox]])
+
+vim.cmd([[set noswapfile]])

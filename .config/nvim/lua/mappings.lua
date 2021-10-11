@@ -72,6 +72,9 @@ map("n", "<leader>hs", ':lua require"telescope.builtin".find_files({hidden = tru
 map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')
 map("n", "<leader>tp", ":Telescope projects<CR>")
 
+-- lir (file explorer)
+map("n", "<leader>e", ":lua require'lir.float'.toggle()<CR>")
+
 -- lsp saga
 map("n", "<leader>ca", ":Lspsaga code_action<CR>")
 map("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>")
@@ -86,7 +89,6 @@ map("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>")
 map("n", "<leader>cc", "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
 map("n", "[e", ":Lspsaga diagnostic_jump_next<CR>")
 map("n", "]e", ":Lspsaga diagnostic_jump_next<CR>")
-map("n", "<leader>e", ":ToggleTerm<CR>")
 map("n", "<leader>d", ":Lspsaga open_floaterm<CR>")
 map("t", "<ESC>", "<C-\\><C-n>:Lspsaga close_floaterm<CR>")
 
