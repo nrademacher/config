@@ -1,14 +1,7 @@
-#!/bin/sh
-
 # web search
 alias '?'='duck'
 alias '??'='google'
 alias aw='archwiki'
-
-# pomodoro timer (tmux)
-alias pd='pomo duration'
-alias psp='pomo stop'
-alias pst='pomo start'
 
 # ls dir/file colors
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -19,19 +12,42 @@ fi
 alias l='ls -1'
 alias ll='ls -la'
 
-# nvim shortcuts
-alias v='nvim'
+# docker shortcuts
+alias d="docker"
+alias dr="readydocker.sh"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dir="docker image rm"
+
+# neovim shortcuts
 alias vi='nvim'
 alias vim='nvim'
 
-# Util
+# ansible shortuts
+alias a="ansible"
+alias ap="ansible-playbook"
+
+# pnpm shortcuts
+alias p="pnpm"
+alias pb="pnpm build"
+alias pd="pnpm dev"
+alias pi="pnpm i"
+
+# yarn shortcuts
+alias y="yarn"
+alias yb="yarn build"
+alias yd="yarn dev"
+alias ys="yarn start"
+
+# misc shortcuts
 alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
-alias cat='bat'
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
-alias tree='tree -CphuN'
-alias x="exit" # Exit Terminal
+alias h='history'
+alias t='touch'
+alias tr='tree -CphuNI node_modules'
+alias x="exit" # Exit terminal
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 
 # Git
@@ -73,15 +89,5 @@ alias gst="git status"
 alias gstp="git stash pop"
 alias gsts="git stash show -p"
 
-# tmux
-alias t="tmux"
-alias tl="tmux ls"
-alias ts="tmux new -s"
-alias ta="tmux attach -t"
-alias tad="tmux attach -d -t"
-alias tksv="tmux kill-server"
-alias tkss="tmux kill-session -t"
-alias trss="tmux rename-session"
-alias tlb="tmux list-buffers"
-alias tcb="tmux choose-buffer"
-
+# GitHub CLI
+alias ghl="gh issue list"
