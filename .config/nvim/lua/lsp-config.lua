@@ -21,4 +21,6 @@ require "lspconfig".cssls.setup {
   capabilities = capabilities
 }
 
-require "lspconfig".volar.setup {}
+require "lspconfig".volar.setup {
+  capabilities = capabilities
+}

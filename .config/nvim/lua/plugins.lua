@@ -7,6 +7,7 @@ return require("packer").startup {
 
     -- themes
     use "gruvbox-community/gruvbox"
+    use "NTBBloodbath/doombox.nvim"
 
     -- UI
     use "tjdevries/express_line.nvim"
@@ -15,6 +16,7 @@ return require("packer").startup {
     -- syntax
     use "nvim-treesitter/nvim-treesitter"
     use "pantharshit00/vim-prisma"
+    use "chr4/nginx.vim"
 
     -- lsp setup
     use "neovim/nvim-lspconfig"
