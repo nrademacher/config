@@ -29,7 +29,7 @@ wo.number = true
 wo.numberwidth = 2
 o.laststatus = 2
 
-vim.g.gruvbox_contrast_dark = "soft"
+vim.g.gruvbox_contrast_dark = "hard"
 vim.cmd([[colorscheme gruvbox]])
 
 vim.cmd([[set noswapfile]])
