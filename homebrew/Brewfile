@@ -54,6 +54,8 @@ brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
 brew 'zstd'
 
+cask 'alfred'
+cask 'brave'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'anki'
 cask 'keka'
