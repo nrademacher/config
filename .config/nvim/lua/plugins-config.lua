@@ -36,6 +36,8 @@ require("lspkind").init()
 
 require("lspsaga").init_lsp_saga()
 
+require("hop").setup()
+
 require("harpoon").setup()
 
 require("colorizer").setup()
