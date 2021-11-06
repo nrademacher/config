@@ -55,7 +55,7 @@ brew 'zsh-syntax-highlighting'
 brew 'zstd'
 
 cask 'alfred'
-cask 'brave'
+cask 'brave-browser'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'anki'
 cask 'keka'
