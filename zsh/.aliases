@@ -44,6 +44,7 @@ alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the alia
 alias coding="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
+alias openvpn='/usr/local/opt/openvpn/sbin/openvpn'
 alias h='history'
 alias t='touch'
 alias tr='tree -CphuNI node_modules'
