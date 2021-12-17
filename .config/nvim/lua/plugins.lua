@@ -7,7 +7,16 @@ return require("packer").startup {
 
     -- themes
     use "gruvbox-community/gruvbox"
-    use "NTBBloodbath/doombox.nvim"
+    use "folke/tokyonight.nvim"
+    use "navarasu/onedark.nvim"
+    use 'tjdevries/colorbuddy.vim'
+    use 'tjdevries/gruvbuddy.nvim'
+    use 'bluz71/vim-moonfly-colors'
+    use 'shaunsingh/seoul256.nvim'
+    use {
+    "mcchrish/zenbones.nvim",
+    requires = "rktjmp/lush.nvim"
+   }
 
     -- UI
     use "tjdevries/express_line.nvim"
@@ -20,7 +29,7 @@ return require("packer").startup {
 
     -- lsp setup
     use "neovim/nvim-lspconfig"
-    use "kabouzeid/nvim-lspinstall"
+    use "williamboman/nvim-lsp-installer"
     use "al3xfischer/lspsaga.nvim"
     use {
       "folke/lsp-trouble.nvim",

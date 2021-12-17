@@ -52,12 +52,12 @@ require("formatter").setup(
   }
 )
 
-vim.api.nvim_exec(
-  [[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css,*.scss,*.svelte,*.prisma,*.vue,*.sh,*.c,*.lua,*.json FormatWrite
-augroup END
-]],
-  true
-)
+-- vim.api.nvim_exec(
+--  [[
+--augroup FormatAutogroup
+--  autocmd!
+--  autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css,*.scss,*.svelte,*.prisma,*.vue,*.sh,*.c,*.lua,*.json FormatWrite
+-- augroup END
+-- ]],
+-- false
+-- )

@@ -16,9 +16,9 @@ o.hidden = true
 o.completeopt = "menuone,noinsert,noselect"
 bo.autoindent = true
 bo.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
 o.expandtab = true
 wo.relativenumber = true
 wo.signcolumn = "yes"
@@ -29,7 +29,9 @@ wo.number = true
 wo.numberwidth = 2
 o.laststatus = 2
 
-vim.g.gruvbox_contrast_dark = "hard"
-vim.cmd([[colorscheme gruvbox]])
+-- vim.g.gruvbox_contrast_dark = "soft"
+vim.cmd([[colorscheme seoulbones]])
+-- require('colorbuddy').colorscheme('gruvbuddy')
 
 vim.cmd([[set noswapfile]])
+

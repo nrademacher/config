@@ -27,12 +27,6 @@ alias vim='nvim'
 alias a="ansible"
 alias ap="ansible-playbook"
 
-# pnpm shortcuts
-alias p="pnpm"
-alias pb="pnpm build"
-alias pd="pnpm dev"
-alias pi="pnpm i"
-
 # yarn shortcuts
 alias y="yarn"
 alias yb="yarn build"
@@ -41,11 +35,15 @@ alias ys="yarn start"
 
 # misc shortcuts
 alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
-alias coding="cd $PROJECTS_DIR"
+alias proj="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
-alias openvpn='/usr/local/opt/openvpn/sbin/openvpn'
 alias h='history'
+alias hypers='${=EDITOR} ${ZDOTDIR:-$HOME}/.keyboard/hammerspoon/hyper-apps.lua'
+alias nmap='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/mappings.lua'
+alias nplug='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/plugins.lua'
+alias nplugconf='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/plugins-config.lua'
+alias nsett='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/settings.lua'
 alias t='touch'
 alias tr='tree -CphuNI node_modules'
 alias x="exit" # Exit terminal
