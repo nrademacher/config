@@ -20,8 +20,8 @@ end
 map("n", "<leader>.", ':lua require("headwind").buf_sort_tailwind_classes()<CR>')
 
 -- switch between dark/light themes
-map("n", "<leader>tl", ':lua vim.o.background = "light"<CR>')
-map("n", "<leader>td", ':lua vim.o.background = "dark"<CR>')
+--[[ map("n", "<leader>tl", ':lua vim.o.background = "light"<CR>')
+map("n", "<leader>td", ':lua vim.o.background = "dark"<CR>') ]]
 
 -- unmap arrow keys
 map("n", "<up>", "<nop>")
@@ -62,15 +62,12 @@ map("n", "<leader>q", ":q<cr>")
 map("n", "<leader>Q", ":qa!<cr>")
 
 -- telescope
-map("n", "<leader>bm", ':lua require("telescope").extensions.bookmarks.bookmarks()<CR>')
 map("n", "<leader>bu", ':lua require"telescope.builtin".buffers()<CR>')
-map("n", "<leader>f", ':lua require"telescope.builtin".live_grep()<CR>')
+map("n", "<leader>g", ':lua require"telescope.builtin".live_grep()<CR>')
+map("n", "<leader>ff", ":lua require('telescope').extensions.frecency.frecency()<CR>")
 map("n", "<leader>fh", ':lua require"telescope.builtin".help_tags()<CR>')
-map("n", "<leader>fw", ':lua require"telescope.builtin".help_tags()<CR>')
-map("n", "<leader>g", ':lua require"telescope".extensions.git_worktree.git_worktrees()<CR>')
-map("n", "<leader>hs", ':lua require"telescope.builtin".find_files({hidden = true})<CR>')
+map("n", "<leader>as", ':lua require"telescope.builtin".find_files({hidden = true})<CR>')
 map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')
-map("n", "<leader>tp", ":Telescope projects<CR>")
 
 -- lir (file explorer)
 map("n", "<leader>e", ":lua require'lir.float'.toggle()<CR>")
@@ -97,11 +94,12 @@ map("n", "<leader>lt", ":LspTroubleToggle<CR>")
 map("n", "<leader>lwt", ":LspTroubleWorkspaceToggle<CR>")
 map("n", "<leader>ldt", ":LspTroubleDocumentToggle<CR>")
 
--- git worktrees
-map("n", "<leader>gw", ':lua require("git-worktree").')
-map("n", "<leader>gwc", ':lua require("git-worktree").create_worktree("main", "develop", "origin")<CR>')
-map("n", "<leader>gws", ':lua require("git-worktree").switch_worktree("develop")<CR>')
-map("n", "<leader>gwd", ':lua require("git-worktree").delete_worktree("develop")<CR>')
+--git signs
+map("n", "<leader>ts", ":Gitsigns toggle_current_line_blame<CR>")
+map("n", "<leader>tb", ":Gitsigns toggle_signs<CR>")
+map("n", "<leader>tn", ":Gitsigns toggle_numhl<CR>")
+map("n", "<leader>tl", ":Gitsigns toggle_linehl<CR>")
+map("n", "<leader>tw", ":Gitsigns toggle_word_diff<CR>")
 
 -- harpoon
 map("n", "m1", ':lua require("harpoon.ui").nav_file(1)<CR>')

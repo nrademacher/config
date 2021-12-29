@@ -53,6 +53,7 @@ alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc f
 alias g="git"
 alias ga='git add'
 alias gaa='git add --all'
+alias gap='git add --patch'
 alias gb='git branch'
 alias gbD='git branch -D'
 alias gbda='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*($(git_main_branch)|development|develop|devel|dev)\s*$)" | command xargs -n 1 git branch -d'

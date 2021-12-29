@@ -790,7 +790,8 @@ background_tint 0.9
 # include themes/one_dark.conf
 # include themes/gruvbox_dark_hard.conf
 # include themes/seoulbones_dark.conf
-include themes/seoulbones_light.conf
+# include themes/seoulbones_light.conf
+include themes/kanagawa.conf
 # include themes/gruvbox_dark_hard.conf
 
 # darker palenight bg
@@ -1394,3 +1395,9 @@ listen_on unix:/tmp/mykitty
 shell .
 symbol_map U+f101-U+f208 nonicon
 
+
+
+# BEGIN_KITTY_THEME
+# Dracula
+include current-theme.conf
+# END_KITTY_THEME

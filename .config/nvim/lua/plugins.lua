@@ -8,19 +8,13 @@ return require("packer").startup {
     -- themes
     use "gruvbox-community/gruvbox"
     use "folke/tokyonight.nvim"
-    use "navarasu/onedark.nvim"
-    use 'tjdevries/colorbuddy.vim'
-    use 'tjdevries/gruvbuddy.nvim'
-    use 'bluz71/vim-moonfly-colors'
-    use 'shaunsingh/seoul256.nvim'
-    use {
-    "mcchrish/zenbones.nvim",
-    requires = "rktjmp/lush.nvim"
-   }
+    use "rebelot/kanagawa.nvim"
 
     -- UI
     use "tjdevries/express_line.nvim"
     use "tamago324/lir.nvim"
+    use 'rhysd/git-messenger.vim'
+    use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
     -- syntax
     use "nvim-treesitter/nvim-treesitter"
@@ -30,7 +24,7 @@ return require("packer").startup {
     -- lsp setup
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
-    use "al3xfischer/lspsaga.nvim"
+    use "tami5/lspsaga.nvim"
     use {
       "folke/lsp-trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons"
@@ -40,8 +34,10 @@ return require("packer").startup {
     -- telescope
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
-    use "nvim-telescope/telescope-fzy-native.nvim"
     use "nvim-telescope/telescope.nvim"
+    use "nvim-telescope/telescope-ui-select.nvim"
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use { "nvim-telescope/telescope-frecency.nvim", requires = {"tami5/sqlite.lua"} }
 
     -- text manipulation
     use "b3nj5m1n/kommentary"

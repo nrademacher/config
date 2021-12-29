@@ -30,8 +30,7 @@ wo.numberwidth = 2
 o.laststatus = 2
 
 -- vim.g.gruvbox_contrast_dark = "soft"
-vim.cmd([[colorscheme seoulbones]])
--- require('colorbuddy').colorscheme('gruvbuddy')
+vim.cmd([[colorscheme kanagawa]])
 
 vim.cmd([[set noswapfile]])
 

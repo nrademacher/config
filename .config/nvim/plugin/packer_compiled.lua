@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -73,11 +73,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/bad-practices.nvim",
     url = "https://github.com/antonk52/bad-practices.nvim"
-  },
-  ["colorbuddy.vim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
-    url = "https://github.com/tjdevries/colorbuddy.vim"
   },
   ["emmet-vim"] = {
     loaded = true,
@@ -99,15 +94,20 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["git-messenger.vim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/git-messenger.vim",
+    url = "https://github.com/rhysd/git-messenger.vim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
-  },
-  ["gruvbuddy.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim",
-    url = "https://github.com/tjdevries/gruvbuddy.nvim"
   },
   harpoon = {
     loaded = true,
@@ -123,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   kommentary = {
     loaded = true,
@@ -147,12 +152,7 @@ _G.packer_plugins = {
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/al3xfischer/lspsaga.nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
+    url = "https://github.com/tami5/lspsaga.nvim"
   },
   ["nginx.vim"] = {
     loaded = true,
@@ -199,11 +199,6 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -219,20 +214,30 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["seoul256.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/seoul256.nvim",
-    url = "https://github.com/shaunsingh/seoul256.nvim"
-  },
   ["sideways.vim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/sideways.vim",
     url = "https://github.com/AndrewRadev/sideways.vim"
   },
-  ["telescope-fzy-native.nvim"] = {
+  ["sqlite.lua"] = {
     loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
-    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/sqlite.lua",
+    url = "https://github.com/tami5/sqlite.lua"
+  },
+  ["telescope-frecency.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim",
+    url = "https://github.com/nvim-telescope/telescope-frecency.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -243,11 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-moonfly-colors"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
-    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["vim-prisma"] = {
     loaded = true,
@@ -263,11 +263,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["zenbones.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
-    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 

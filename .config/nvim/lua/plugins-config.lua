@@ -8,6 +8,8 @@ require("autocomplete")
 
 require("formatter-config")
 
+require('gitsigns').setup()
+
 local configs = require "nvim-treesitter.configs"
 configs.setup {
   ensure_installed = "maintained",
@@ -29,8 +31,18 @@ telescope.setup {
         ["<C-j>"] = telescope_actions.move_selection_next
       }
     }
+  },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- more opts
+      }
+    }
   }
 }
+require("telescope").load_extension("fzf")
+require("telescope").load_extension("frecency")
+require("telescope").load_extension("ui-select")
 
 require("lspkind").init()
 
