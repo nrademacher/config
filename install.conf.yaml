@@ -12,6 +12,7 @@
 - clean: ["~"]
 
 - link:
+    ~/.keyboard: .keyboard
     ~/.aliases: zsh/.aliases
     ~/.config/nvim: .config/nvim
     ~/.config/kitty: .config/kitty
