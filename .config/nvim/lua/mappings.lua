@@ -13,8 +13,11 @@ vim.cmd [[inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 }) ]]
 vim.cmd [[inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 }) ]]
 
 local map = function(mode, key, result)
-  vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
+    vim.api.nvim_set_keymap(mode, key, result, {noremap = true, silent = true})
 end
+
+-- format code
+map("n", "<leader>,", ":Neoformat<CR>")
 
 -- sort tailwindcss classes
 map("n", "<leader>.", ':lua require("headwind").buf_sort_tailwind_classes()<CR>')
@@ -90,9 +93,12 @@ map("n", "<leader>d", ":Lspsaga open_floaterm<CR>")
 map("t", "<ESC>", "<C-\\><C-n>:Lspsaga close_floaterm<CR>")
 
 -- lsp trouble
-map("n", "<leader>lt", ":LspTroubleToggle<CR>")
-map("n", "<leader>lwt", ":LspTroubleWorkspaceToggle<CR>")
-map("n", "<leader>ldt", ":LspTroubleDocumentToggle<CR>")
+map("n", "<leader>lt", ":TroubleToggle<CR>")
+map("n", "<leader>lwt", ":TroubleToggle workspace_diagnostics<CR>")
+map("n", "<leader>ldt", ":TroubleToggle document_diagnostics<CR>")
+map("n", "<leader>lqt", ":TroubleToggle quickfix<CR>")
+map("n", "<leader>llt", ":TroubleToggle loclist<CR>")
+map("n", "gR", ":TroubleToggle lsp_references<CR>")
 
 --git signs
 map("n", "<leader>ts", ":Gitsigns toggle_current_line_blame<CR>")

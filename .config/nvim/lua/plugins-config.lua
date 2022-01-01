@@ -2,13 +2,13 @@ require("lsp-config")
 
 require("statusline")
 
-require("file-explorer")
+require('gitsigns').setup()
 
 require("autocomplete")
 
-require("formatter-config")
+require("file-explorer")
 
-require('gitsigns').setup()
+require('package-info').setup()
 
 local configs = require "nvim-treesitter.configs"
 configs.setup {
@@ -42,7 +42,6 @@ telescope.setup {
 }
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("frecency")
-require("telescope").load_extension("ui-select")
 
 require("lspkind").init()
 

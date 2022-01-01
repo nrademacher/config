@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/express_line.nvim",
     url = "https://github.com/tjdevries/express_line.nvim"
   },
-  ["formatter.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-    url = "https://github.com/mhartington/formatter.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -118,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/headwind.nvim",
     url = "https://github.com/steelsojka/headwind.nvim"
+  },
+  ["hologram.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/hologram.nvim",
+    url = "https://github.com/edluffy/hologram.nvim"
   },
   ["hop.nvim"] = {
     loaded = true,
@@ -154,10 +154,20 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/tami5/lspsaga.nvim"
   },
+  neoformat = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
   ["nginx.vim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nginx.vim",
     url = "https://github.com/chr4/nginx.vim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -198,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["package-info.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/package-info.nvim",
+    url = "https://github.com/vuki656/package-info.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
