@@ -219,10 +219,10 @@ function windowLayoutMode.bindWithAutomaticExit(mode, modifiers, key, fn)
   end)
 end
 
-local status, windowMappings = pcall(require, 'keyboard.windows-bindings')
+local status, windowMappings = pcall(require, 'windows-bindings')
 
 if not status then
-  windowMappings = require('keyboard.windows-bindings-defaults')
+  windowMappings = require('windows-bindings-defaults')
 end
 
 local modifiers = windowMappings.modifiers
@@ -263,7 +263,7 @@ for i, mapping in ipairs(mappings) do
   end)
 end
 
-local message = require('keyboard.status-message')
+local message = require('status-message')
 windowLayoutMode.statusMessage = message.new(msgStr)
 
 -- Use modifiers+trigger to toggle WindowLayout Mode

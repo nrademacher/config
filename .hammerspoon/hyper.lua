@@ -1,7 +1,7 @@
-local status, hyperModeAppMappings = pcall(require, 'keyboard.hyper-apps')
+local status, hyperModeAppMappings = pcall(require, 'hyper-apps')
 
 if not status then
-  hyperModeAppMappings = require('keyboard.hyper-apps-defaults')
+  hyperModeAppMappings = require('hyper-apps-defaults')
 end
 
 for i, mapping in ipairs(hyperModeAppMappings) do

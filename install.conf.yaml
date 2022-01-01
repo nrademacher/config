@@ -12,8 +12,8 @@
 - clean: ["~"]
 
 - link:
-    ~/.keyboard: .keyboard
     ~/.aliases: zsh/.aliases
+    ~/.hammerspoon: .hammerspoon
     ~/.config/nvim: .config/nvim
     ~/.config/kitty: .config/kitty
     ~/.config/yabai: .config/yabai
