@@ -23,16 +23,6 @@ alias dir="docker image rm"
 alias vi='nvim'
 alias vim='nvim'
 
-# ansible shortuts
-alias a="ansible"
-alias ap="ansible-playbook"
-
-# yarn shortcuts
-alias y="yarn"
-alias yb="yarn build"
-alias yd="yarn dev"
-alias ys="yarn start"
-
 # misc shortcuts
 alias aliases='${=EDITOR} ${ZDOTDIR:-$HOME}/.aliases' # Quick access to the aliases.zsh file
 alias proj="cd $PROJECTS_DIR"
@@ -59,16 +49,14 @@ alias gbD='git branch -D'
 alias gbda='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*($(git_main_branch)|development|develop|devel|dev)\s*$)" | command xargs -n 1 git branch -d'
 alias gbl='git blame -b -w'
 alias gbr='git branch --remote'
-alias gc="git commit"
 alias gc='git commit -v'
+alias gcan='git commit --amend --no-edit -v'
 alias gcb="git checkout -b"
-alias gcb='git checkout -b'
 alias gcd="git checkout development"
 alias gcl='git clone --recurse-submodules'
 alias gcm='git checkout $(git_main_branch)'
 alias gco="git checkout"
 alias gd="git diff"
-alias gd='git diff'
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
 alias gfo='git fetch origin'

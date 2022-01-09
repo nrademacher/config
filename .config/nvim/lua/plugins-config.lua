@@ -1,15 +1,14 @@
 require("lsp-config")
 
-require("statusline")
-
 require('gitsigns').setup()
 
-require("autocomplete")
+require("statusline")
 
 require("file-explorer")
 
-require('package-info').setup()
+require("autocomplete")
 
+-- treesitter
 local configs = require "nvim-treesitter.configs"
 configs.setup {
   ensure_installed = "maintained",
@@ -21,6 +20,7 @@ configs.setup {
   }
 }
 
+-- telescope
 local telescope = require("telescope")
 local telescope_actions = require "telescope.actions"
 telescope.setup {
@@ -52,3 +52,5 @@ require("hop").setup()
 require("harpoon").setup()
 
 require("colorizer").setup()
+
+require('bad_practices').setup()

@@ -13,8 +13,6 @@ return require("packer").startup {
         -- general ui
         use "tjdevries/express_line.nvim"
         use "tamago324/lir.nvim"
-        use {"vuki656/package-info.nvim", requires = {"MunifTanjim/nui.nvim"}}
-        use "edluffy/hologram.nvim"
 
         -- git ui
         use "rhysd/git-messenger.vim"
@@ -29,17 +27,16 @@ return require("packer").startup {
         use "neovim/nvim-lspconfig"
         use "williamboman/nvim-lsp-installer"
         use "tami5/lspsaga.nvim"
+        use "onsails/lspkind-nvim"
         use {
             "folke/lsp-trouble.nvim",
             requires = "kyazdani42/nvim-web-devicons"
         }
-        use "onsails/lspkind-nvim"
 
         -- telescope
         use "nvim-lua/plenary.nvim"
         use "nvim-lua/popup.nvim"
         use "nvim-telescope/telescope.nvim"
-        use "nvim-telescope/telescope-ui-select.nvim"
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
         use {"nvim-telescope/telescope-frecency.nvim", requires = {"tami5/sqlite.lua"}}
 

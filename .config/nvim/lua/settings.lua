@@ -33,4 +33,3 @@ o.laststatus = 2
 vim.cmd([[colorscheme kanagawa]])
 
 vim.cmd([[set noswapfile]])
-

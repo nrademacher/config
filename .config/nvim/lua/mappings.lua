@@ -20,12 +20,13 @@ end
 map("n", "<leader>,", ":Neoformat<CR>")
 
 -- sort tailwindcss classes
-map("n", "<leader>.", ':lua require("headwind").buf_sort_tailwind_classes()<CR>')
+-- map("n", "<leader>.", ':lua require("headwind").buf_sort_tailwind_classes()<CR>')
+-- use emmet
+map("n", "<leader>.", ":Emmet ")
 
 -- switch between dark/light themes
 --[[ map("n", "<leader>tl", ':lua vim.o.background = "light"<CR>')
 map("n", "<leader>td", ':lua vim.o.background = "dark"<CR>') ]]
-
 -- unmap arrow keys
 map("n", "<up>", "<nop>")
 map("i", "<up>", "<nop>")
@@ -73,7 +74,7 @@ map("n", "<leader>as", ':lua require"telescope.builtin".find_files({hidden = tru
 map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')
 
 -- lir (file explorer)
-map("n", "<leader>e", ":lua require'lir.float'.toggle()<CR>")
+map("n", "<leader>e", ":lua require'lir.float'.toggle()<CR>:set relativenumber<CR>")
 
 -- lsp saga
 map("n", "<leader>ca", ":Lspsaga code_action<CR>")
