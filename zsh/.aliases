@@ -13,13 +13,13 @@ alias l='ls -1'
 alias ll='ls -la'
 
 # docker shortcuts
-alias d="docker"
-alias dr="readydocker.sh"
+alias d="readydocker.sh"
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
 alias dir="docker image rm"
 
 # neovim shortcuts
+alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
@@ -29,7 +29,7 @@ alias proj="cd $PROJECTS_DIR"
 alias dots="cd $DOTFILES"
 alias grep='grep --color'
 alias h='history'
-alias hypers='${=EDITOR} ${ZDOTDIR:-$HOME}/.keyboard/hammerspoon/hyper-apps.lua'
+alias hypers='${=EDITOR} ${ZDOTDIR:-$HOME}/.hammerspoon/hyper-apps.lua'
 alias nmap='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/mappings.lua'
 alias nplug='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/plugins.lua'
 alias nplugconf='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/plugins-config.lua'
@@ -67,6 +67,7 @@ alias gma='git merge --abort'
 alias gmom='git merge origin/$(git_main_branch)'
 alias gp='git push'
 alias gpob='git push origin $(git branch --show-current)'
+alias gpobf='git push origin $(git branch --show-current) --force'
 alias gpristine='git reset --hard && git clean -dffx'
 alias grbi='git rebase -i'
 alias grbm='git rebase $(git_main_branch)'
@@ -78,4 +79,4 @@ alias gstp="git stash pop"
 alias gsts="git stash show -p"
 
 # GitHub CLI
-alias ghl="gh issue list"
+alias ghi="gh issue list"

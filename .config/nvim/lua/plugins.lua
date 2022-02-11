@@ -6,9 +6,11 @@ return require("packer").startup {
         use "wbthomason/packer.nvim"
 
         -- themes
+        use "junegunn/seoul256.vim"
         use "gruvbox-community/gruvbox"
-        use "folke/tokyonight.nvim"
         use "rebelot/kanagawa.nvim"
+        use "rmehri01/onenord.nvim"
+        use "pgdouyon/vim-yin-yang"
 
         -- general ui
         use "tjdevries/express_line.nvim"
@@ -21,12 +23,12 @@ return require("packer").startup {
         -- syntax
         use "nvim-treesitter/nvim-treesitter"
         use "pantharshit00/vim-prisma"
-        use "chr4/nginx.vim"
 
         -- lsp setup
         use "neovim/nvim-lspconfig"
         use "williamboman/nvim-lsp-installer"
         use "tami5/lspsaga.nvim"
+        use {"gfanto/fzf-lsp.nvim", requires = {"junegunn/fzf"}}
         use "onsails/lspkind-nvim"
         use {
             "folke/lsp-trouble.nvim",
@@ -50,7 +52,7 @@ return require("packer").startup {
         use "ThePrimeagen/harpoon"
         use "phaazon/hop.nvim"
 
-        -- autocompletion
+        -- autocompletion engine
         use "hrsh7th/nvim-compe"
 
         -- code snippets
@@ -60,12 +62,14 @@ return require("packer").startup {
 
         -- formatting
         use "sbdchd/neoformat"
-        use "steelsojka/headwind.nvim"
 
         -- misc utils
+        use "tpope/vim-repeat"
         use "AndrewRadev/sideways.vim"
         use "antonk52/bad-practices.nvim"
+        use "RRethy/vim-illuminate"
         use "norcalli/nvim-colorizer.lua"
+        use "xiyaowong/nvim-transparent"
     end,
     config = {
         git = {

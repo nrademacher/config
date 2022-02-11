@@ -35,3 +35,6 @@ require "lspconfig".cssls.setup {
 --[[ require "lspconfig".volar.setup {
   capabilities = capabilities
 } ]]
+
+require("lspkind").init({})
+require("lspsaga").init_lsp_saga()

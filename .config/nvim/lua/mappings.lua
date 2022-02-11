@@ -27,6 +27,7 @@ map("n", "<leader>.", ":Emmet ")
 -- switch between dark/light themes
 --[[ map("n", "<leader>tl", ':lua vim.o.background = "light"<CR>')
 map("n", "<leader>td", ':lua vim.o.background = "dark"<CR>') ]]
+
 -- unmap arrow keys
 map("n", "<up>", "<nop>")
 map("i", "<up>", "<nop>")
@@ -50,8 +51,27 @@ map("n", "<leader>p", '"*p')
 map("n", "<leader>Y", '"+y')
 map("n", "<leader>P", '"+p')
 
--- terminal escape
-map("t", "<ESC>", "<C-\\><C-n>")
+-- moving lines up and down
+map("n", "<leader>j", ":move+<cr>")
+map("n", "<leader>k", ":move-2<cr>")
+
+-- moving props sideways
+map("n", "<leader>h", ":SidewaysLeft<cr>")
+map("n", "<leader>l", ":SidewaysRight<cr>")
+map("n", "<c-h>", ":SidewaysJumpRight<cr>")
+map("n", "<c-l>", ":SidewaysJumpLeft<cr>")
+
+-- hopping around
+map("n", "<leader>hw", ":HopWord<cr>")
+map("n", "<leader>hp", ":HopPattern<cr>")
+map("n", "<leader>hc", ":HopChar1<cr>")
+map("n", "<leader>h2c", ":HopChar2<cr>")
+map("n", "<leader>hl", ":HopLine<cr>")
+map("n", "<leader>hsl", ":HopLineStart<cr>")
+
+-- Open new line below and above current line
+map("n", "<leader>o", "o<esc>")
+map("n", "<leader>O", "O<esc>")
 
 -- buffer management
 map("n", "<leader>x", ":bd<CR>")
@@ -68,13 +88,27 @@ map("n", "<leader>Q", ":qa!<cr>")
 -- telescope
 map("n", "<leader>bu", ':lua require"telescope.builtin".buffers()<CR>')
 map("n", "<leader>g", ':lua require"telescope.builtin".live_grep()<CR>')
-map("n", "<leader>ff", ":lua require('telescope').extensions.frecency.frecency()<CR>")
-map("n", "<leader>fh", ':lua require"telescope.builtin".help_tags()<CR>')
+map("n", "<leader>th", ':lua require"telescope.builtin".help_tags()<CR>')
 map("n", "<leader>as", ':lua require"telescope.builtin".find_files({hidden = true})<CR>')
 map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')
 
 -- lir (file explorer)
 map("n", "<leader>e", ":lua require'lir.float'.toggle()<CR>:set relativenumber<CR>")
+
+-- lsp fzf
+map("n", "<leader>fde", ":Definitions<CR>")
+map("n", "<leader>fdc", ":Declarations<CR>")
+map("n", "<leader>ftd", ":TypeDefinitions<CR>")
+map("n", "<leader>fi", ":Implementations<CR>")
+map("n", "<leader>fds", ":DocumentSymbols<CR>")
+map("n", "<leader>fds", ":DocumentSymbols<CR>")
+map("n", "<leader>fic", ":IncomingCalls<CR>")
+map("n", "<leader>foc", ":OutgoingCalls<CR>")
+map("n", "<leader>fca", ":CodeActions<CR>")
+map("n", "<leader>frca", ":RangeCodeActions<CR>")
+map("n", "<leader>fdi", ":Diagnostics<CR>")
+
+map("n", "<leader>fadi", ":DiagnosticsAll<CR>")
 
 -- lsp saga
 map("n", "<leader>ca", ":Lspsaga code_action<CR>")
@@ -107,6 +141,9 @@ map("n", "<leader>tb", ":Gitsigns toggle_signs<CR>")
 map("n", "<leader>tn", ":Gitsigns toggle_numhl<CR>")
 map("n", "<leader>tl", ":Gitsigns toggle_linehl<CR>")
 map("n", "<leader>tw", ":Gitsigns toggle_word_diff<CR>")
+
+-- git messenger
+map("n", "<leader>tm", ":GitMessenger<CR>")
 
 -- harpoon
 map("n", "m1", ':lua require("harpoon.ui").nav_file(1)<CR>')
@@ -142,23 +179,3 @@ map("n", "<leader>mr7", ':lua require("harpoon.mark").rm_file(7)<CR>')
 map("n", "<leader>mr8", ':lua require("harpoon.mark").rm_file(8)<CR>')
 map("n", "<leader>mr9", ':lua require("harpoon.mark").rm_file(9)<CR>')
 
--- moving lines up and down
-map("n", "<leader>j", ":move+<cr>")
-map("n", "<leader>k", ":move-2<cr>")
-
--- moving props sideways
-map("n", "<leader>h", ":SidewaysLeft<cr>")
-map("n", "<leader>l", ":SidewaysRight<cr>")
-map("n", "<c-h>", ":SidewaysJumpRight<cr>")
-map("n", "<c-l>", ":SidewaysJumpLeft<cr>")
-
--- hopping around
-map("n", "<leader>hw", ":HopWord<cr>")
-map("n", "<leader>hp", ":HopPattern<cr>")
-map("n", "<leader>hc", ":HopChar1<cr>")
-map("n", "<leader>h2c", ":HopChar2<cr>")
-map("n", "<leader>hl", ":HopLine<cr>")
-
--- Open new line below and above current line
-map("n", "<leader>o", "o<esc>")
-map("n", "<leader>O", "O<esc>")

@@ -89,6 +89,16 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  fzf = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
+  },
+  ["fzf-lsp.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/fzf-lsp.nvim",
+    url = "https://github.com/gfanto/fzf-lsp.nvim"
+  },
   ["git-messenger.vim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/git-messenger.vim",
@@ -108,11 +118,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
-  },
-  ["headwind.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/headwind.nvim",
-    url = "https://github.com/steelsojka/headwind.nvim"
   },
   ["hop.nvim"] = {
     loaded = true,
@@ -154,11 +159,6 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
   },
-  ["nginx.vim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nginx.vim",
-    url = "https://github.com/chr4/nginx.vim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -184,10 +184,10 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-tabline"] = {
+  ["nvim-transparent"] = {
     loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-tabline",
-    url = "https://github.com/crispgm/nvim-tabline"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -204,6 +204,11 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onenord.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/onenord.nvim",
+    url = "https://github.com/rmehri01/onenord.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -218,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["seoul256.vim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/seoul256.vim",
+    url = "https://github.com/junegunn/seoul256.vim"
   },
   ["sideways.vim"] = {
     loaded = true,
@@ -244,15 +254,20 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
+  ["vim-illuminate"] = {
     loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-prisma"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-prisma",
     url = "https://github.com/pantharshit00/vim-prisma"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -263,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vim-yin-yang"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-yin-yang",
+    url = "https://github.com/pgdouyon/vim-yin-yang"
   }
 }
 

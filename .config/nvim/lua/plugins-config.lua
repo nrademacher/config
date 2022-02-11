@@ -9,7 +9,7 @@ require("file-explorer")
 require("autocomplete")
 
 -- treesitter
-local configs = require "nvim-treesitter.configs"
+local configs = require("nvim-treesitter.configs")
 configs.setup {
   ensure_installed = "maintained",
   highlight = {
@@ -43,14 +43,12 @@ telescope.setup {
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("frecency")
 
-require("lspkind").init()
-
-require("lspsaga").init_lsp_saga()
-
-require("hop").setup()
-
 require("harpoon").setup()
+
+require'hop'.setup()
 
 require("colorizer").setup()
 
 require('bad_practices').setup()
+
+require("transparent").setup({})
