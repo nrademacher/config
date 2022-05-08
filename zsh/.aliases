@@ -56,6 +56,7 @@ alias gcd="git checkout development"
 alias gcl='git clone --recurse-submodules'
 alias gcm='git checkout $(git_main_branch)'
 alias gco="git checkout"
+alias gcp="git cherry-pick"
 alias gd="git diff"
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
