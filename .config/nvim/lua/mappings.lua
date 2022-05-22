@@ -27,7 +27,6 @@ map("n", "<leader>.", ":Emmet ")
 -- switch between dark/light themes
 --[[ map("n", "<leader>tl", ':lua vim.o.background = "light"<CR>')
 map("n", "<leader>td", ':lua vim.o.background = "dark"<CR>') ]]
-
 -- unmap arrow keys
 map("n", "<up>", "<nop>")
 map("i", "<up>", "<nop>")
@@ -178,4 +177,3 @@ map("n", "<leader>mr6", ':lua require("harpoon.mark").rm_file(6)<CR>')
 map("n", "<leader>mr7", ':lua require("harpoon.mark").rm_file(7)<CR>')
 map("n", "<leader>mr8", ':lua require("harpoon.mark").rm_file(8)<CR>')
 map("n", "<leader>mr9", ':lua require("harpoon.mark").rm_file(9)<CR>')
-
