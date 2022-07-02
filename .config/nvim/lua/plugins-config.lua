@@ -22,7 +22,7 @@ configs.setup {
 
 -- telescope
 local telescope = require("telescope")
-local telescope_actions = require "telescope.actions"
+local telescope_actions = require("telescope.actions")
 telescope.setup {
   defaults = {
     mappings = {
@@ -40,15 +40,10 @@ telescope.setup {
     }
   }
 }
-require("telescope").load_extension("fzf")
-require("telescope").load_extension("frecency")
+telescope.load_extension("fzf")
+telescope.load_extension("frecency")
 
 require("harpoon").setup()
-
-require'hop'.setup()
-
+require("hop").setup()
 require("colorizer").setup()
-
 require('bad_practices').setup()
-
-require("transparent").setup({})

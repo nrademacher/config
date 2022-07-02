@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
   },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
-  },
   kommentary = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/kommentary",
@@ -184,11 +179,6 @@ _G.packer_plugins = {
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-transparent"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-transparent",
-    url = "https://github.com/xiyaowong/nvim-transparent"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -203,11 +193,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["onenord.nvim"] = {
-    loaded = true,
-    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/onenord.nvim",
-    url = "https://github.com/rmehri01/onenord.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -228,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/seoul256.vim",
     url = "https://github.com/junegunn/seoul256.vim"
+  },
+  ["sg.nvim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/sg.nvim",
+    url = "https://github.com/tjdevries/sg.nvim"
   },
   ["sideways.vim"] = {
     loaded = true,
@@ -253,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-gist"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-gist",
+    url = "https://github.com/mattn/vim-gist"
   },
   ["vim-illuminate"] = {
     loaded = true,
@@ -283,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/vim-yin-yang",
     url = "https://github.com/pgdouyon/vim-yin-yang"
+  },
+  ["webapi-vim"] = {
+    loaded = true,
+    path = "/Users/nrademacher/.local/share/nvim/site/pack/packer/start/webapi-vim",
+    url = "https://github.com/mattn/webapi-vim"
   }
 }
 

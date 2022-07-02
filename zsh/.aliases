@@ -1,8 +1,3 @@
-# web search
-alias '?'='duck'
-alias '??'='google'
-alias aw='archwiki'
-
 # ls dir/file colors
 if [[ "$(uname)" == "Darwin" ]]; then
   alias ls="ls -G"
@@ -63,6 +58,7 @@ alias gfa='git fetch --all --prune'
 alias gfo='git fetch origin'
 alias gl='git pull'
 alias glum='git pull upstream $(git_main_branch)'
+alias glg='git log'
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmom='git merge origin/$(git_main_branch)'

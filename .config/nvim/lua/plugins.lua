@@ -8,8 +8,6 @@ return require("packer").startup {
         -- themes
         use "junegunn/seoul256.vim"
         use "gruvbox-community/gruvbox"
-        use "rebelot/kanagawa.nvim"
-        use "rmehri01/onenord.nvim"
         use "pgdouyon/vim-yin-yang"
 
         -- general ui
@@ -38,7 +36,10 @@ return require("packer").startup {
         -- telescope
         use "nvim-lua/plenary.nvim"
         use "nvim-lua/popup.nvim"
-        use "nvim-telescope/telescope.nvim"
+        use {
+            "nvim-telescope/telescope.nvim",
+            requires = {{"nvim-lua/plenary.nvim"}}
+        }
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
         use {"nvim-telescope/telescope-frecency.nvim", requires = {"tami5/sqlite.lua"}}
 
@@ -64,12 +65,15 @@ return require("packer").startup {
         use "sbdchd/neoformat"
 
         -- misc utils
+        use {
+            "tjdevries/sg.nvim",
+            commit = "76354e9f0b6de39134ec9efcd022f079ae0ce02b"
+        }
         use "tpope/vim-repeat"
         use "AndrewRadev/sideways.vim"
         use "antonk52/bad-practices.nvim"
         use "RRethy/vim-illuminate"
         use "norcalli/nvim-colorizer.lua"
-        use "xiyaowong/nvim-transparent"
     end,
     config = {
         git = {
