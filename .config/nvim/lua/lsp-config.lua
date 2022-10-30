@@ -1,34 +1,29 @@
-local lsp_installer = require("nvim-lsp-installer")
-local lsp_config = require("lspconfig")
-
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(
-    function(server)
-        local opts = {}
-
-        -- (optional) Customize the options passed to the server
-        -- if server.name == "tsserver" then
-        --     opts.root_dir = function() ... end
-        -- end
-
-        -- This setup() function is exactly the same as lspconfig's setup function.
-        -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-        server:setup(opts)
-    end
-)
-
-lsp_installer.settings(
-    {
-        ui = {
-            icons = {
-                server_installed = "✓",
-                server_pending = "➜",
-                server_uninstalled = "✗"
-            }
+require("mason").setup {
+    ui = {
+        icons = {
+            package_installed = "✓"
         }
     }
-)
+}
+
+require("mason-lspconfig").setup {
+    ensure_installed = {"sumneko_lua", "tsserver"}
+}
+require("mason-lspconfig").setup_handlers {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function(server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup {}
+    end
+    -- Next, you can provide targeted overrides for specific servers.
+    -- For example, a handler override for the `rust_analyzer`:
+    --[[ ["rust_analyzer"] = function ()
+            require("rust-tools").setup {}
+        end ]]
+}
+
+local lsp_config = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -36,12 +31,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp_config.cssls.setup {
     capabilities = capabilities
 }
---[[ require("sg.lsp").setup {
-    capabilities = capabilities
-} ]]
 
---[[ require "lspconfig".volar.setup {
-  capabilities = capabilities
-} ]]
 require("lspkind").init({})
 require("lspsaga").init_lsp_saga()

@@ -30,7 +30,7 @@ alias nplug='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/plugins.lua'
 alias nplugconf='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/plugins-config.lua'
 alias nsett='${=EDITOR} ${ZDOTDIR-$HOME}/.config/nvim/lua/settings.lua'
 alias t='touch'
-alias tr='tree -CphuNI node_modules'
+alias tr='tree -CphuNI "node_modules|target"'
 alias x="exit" # Exit terminal
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 

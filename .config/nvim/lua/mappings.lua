@@ -86,7 +86,8 @@ map("n", "<leader>Q", ":qa!<cr>")
 
 -- telescope
 map("n", "<leader>bu", ':lua require"telescope.builtin".buffers()<CR>')
-map("n", "<leader>g", ':lua require"telescope.builtin".live_grep()<CR>')
+map("n", "<leader>lg", ':lua require"telescope.builtin".live_grep()<CR>')
+map("n", "<leader>gs", ':lua require"telescope.builtin".grep_string()<CR>')
 map("n", "<leader>th", ':lua require"telescope.builtin".help_tags()<CR>')
 map("n", "<leader>as", ':lua require"telescope.builtin".find_files({hidden = true})<CR>')
 map("n", "<leader>s", ':lua require"telescope.builtin".find_files()<CR>')

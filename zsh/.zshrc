@@ -37,3 +37,10 @@ bindkey -v
 
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+
+# bun completions
+[ -s "/Users/nrademacher/.bun/_bun" ] && source "/Users/nrademacher/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/nrademacher/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
