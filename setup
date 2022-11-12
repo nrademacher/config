@@ -12,7 +12,7 @@ cd homebrew && brew bundle && cd ..
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
 
 # Run dotbot install script to get and link dotfile configs
-./install
+./run_dotbot
 
 # Open Hammerspoon and Karabiner (keyboard setup) and enable them at startup
 open /Applications/Hammerspoon.app
