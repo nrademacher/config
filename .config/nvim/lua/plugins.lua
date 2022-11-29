@@ -4,13 +4,11 @@ return require("paq") {
 
         -- themes
         "junegunn/seoul256.vim";
-        "gruvbox-community/gruvbox";
         "pgdouyon/vim-yin-yang";
 
         -- general ui
         "tjdevries/express_line.nvim"; -- status line
         "tamago324/lir.nvim"; -- file browser
-
 
         -- syntax
         "nvim-treesitter/nvim-treesitter";
@@ -38,8 +36,6 @@ return require("paq") {
         -- git ui
         "rhysd/git-messenger.vim"; -- view commit messages under cursor
         "lewis6991/gitsigns.nvim";
-        "tpope/fugitive";
-        "junegunn/gv.vim";
 
         -- text manipulation
         "b3nj5m1n/kommentary";
