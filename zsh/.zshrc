@@ -2,9 +2,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# MONTEREY OR HIGHER
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# BIG SUR OR LOWER
+# if [[ "$(uname)" == "Darwin" ]]; then
+#   PLUGINS_DIR="/usr/local/share"
+#   else
+#   PLUGINS_DIR="/usr/share/zsh/plugins"
+# fi
+
+source "$PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
+source "$PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 [[ ! -f ~/.aliases ]] || source ~/.aliases
 [[ ! -f ~/z.sh ]] || source ~/z.sh
