@@ -30,8 +30,7 @@ wo.numberwidth = 2
 o.laststatus = 2
 
 -- vim.g.gruvbox_contrast_dark = "soft"
--- vim.g.seoul256_background = 236
+vim.g.seoul256_background = 236
 vim.cmd([[colorscheme seoul256]])
--- require('onenord').setup()
 
 vim.cmd([[set noswapfile]])

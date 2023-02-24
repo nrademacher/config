@@ -14,9 +14,9 @@ source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autos
 #   PLUGINS_DIR="/usr/share/zsh/plugins"
 # fi
 
-source "$PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
-source "$PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# source "$PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
+# source "$PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# source "$PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 [[ ! -f ~/.aliases ]] || source ~/.aliases
 [[ ! -f ~/z.sh ]] || source ~/z.sh

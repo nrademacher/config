@@ -72,8 +72,8 @@ alias grbi='git rebase -i'
 alias grbm='git rebase $(git_main_branch)'
 alias grhh='git reset --hard'
 alias groh='git reset origin/$(git_current_branch) --hard'
-alias gss="git status -s"
-alias gst="git status"
+alias gstat="git status -s"
+alias gst="git stash --include-untracked"
 alias gstp="git stash pop"
 alias gsts="git stash show -p"
 

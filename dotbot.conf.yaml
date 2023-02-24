@@ -5,26 +5,18 @@
 
 - create:
     - ~/.config
-    - ~/.local
     - ~/.ssh
     - ~/projects
 
 - clean: ["~"]
 
 - link:
-    ~/.aliases: zsh/.aliases
     ~/.hammerspoon: .hammerspoon
     ~/.config/nvim: .config/nvim
     ~/.config/kitty: .config/kitty
-    ~/.config/yabai: .config/yabai
-    ~/.config/skhd: .config/skhd
     ~/.config/karabiner: .config/karabiner
-    ~/.local/bin: .local/bin
     ~/.p10k.zsh: zsh/.p10k.zsh
-    ~/.zshenv: zsh/.zshenv
-    ~/.zshrc: zsh/.zshrc
     ~/z.sh: zsh/z.sh
-    ~/anki: anki
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

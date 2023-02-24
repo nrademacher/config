@@ -5,6 +5,7 @@ return require("paq") {
         -- themes
         "junegunn/seoul256.vim";
         "pgdouyon/vim-yin-yang";
+        "pgdouyon/vim-alayas";
 
         -- general ui
         "tjdevries/express_line.nvim"; -- status line

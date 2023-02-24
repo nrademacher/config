@@ -7,7 +7,7 @@ require("mason").setup {
 }
 
 require("mason-lspconfig").setup {
-    ensure_installed = {"sumneko_lua", "tsserver"}
+    ensure_installed = {"tsserver"}
 }
 require("mason-lspconfig").setup_handlers {
     -- The first entry (without a key) will be the default handler
