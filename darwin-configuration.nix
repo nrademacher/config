@@ -4,7 +4,9 @@ let mainUser = "nrademacher";
 in {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  imports = [ <home-manager/nix-darwin> ./brew.nix ];
+  imports = [ <home-manager/nix-darwin> ./homebrew.nix ];
+
+  environment.darwinConfig = "/Users/nrademacher/dotfiles/darwin-configuration.nix";
 
   users.users.${mainUser} = {
     name = mainUser;
@@ -12,7 +14,7 @@ in {
   };
 
   home-manager = {
-    users.${mainUser} = import ./home.nix;
+    users.${mainUser} = import ./darwin-home.nix;
     useGlobalPkgs = true;
     useUserPackages = true;
   };

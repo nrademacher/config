@@ -1,33 +1,4 @@
-{ pkgs, config, ... }:
-
 {
-  # Here goes your home-manager config, eg home.packages = [ foo ];
-  home.packages = with pkgs;
-    [
-      neovim
-      ripgrep
-      fzf
-      gh
-      bat
-      jq
-      git
-      zsh
-      zplug
-      nixfmt
-      shfmt
-      shellcheck
-      fd
-      rustup
-      pwgen
-      cmake
-      php
-      nodejs-16_x
-      jdk17
-      awscli
-    ] ++ (with nodePackages; [ aws-cdk pnpm ]);
-
-  home.stateVersion = "22.11";
-
   programs.zsh = {
     enable = true;
 
@@ -59,6 +30,7 @@
     zplug = {
       enable = true;
       plugins = [
+        { name = "chisui/zsh-nix-shell"; } # Simple plugin installation
         { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
         {
           name = "zsh-users/zsh-syntax-highlighting";
@@ -69,10 +41,5 @@
         } # Installations with additional options. For the list of options, please refer to Zplug README.
       ];
     };
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
   };
 }
