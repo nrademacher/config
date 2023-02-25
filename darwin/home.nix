@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ./zsh/zsh.nix ];
+  imports = [ ../zsh/zsh.nix ];
 
   # Here goes your home-manager config, eg home.packages = [ foo ];
   home.packages = with pkgs;
@@ -18,6 +18,7 @@
       zplug
       nixfmt
       shfmt
+      asmfmt
       shellcheck
       fd
       rustup
