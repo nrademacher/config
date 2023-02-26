@@ -1,37 +1,45 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ../zsh/zsh.nix ];
+  imports = [ ../zsh ];
 
   # Here goes your home-manager config, eg home.packages = [ foo ];
   home.packages = with pkgs;
     [
-      nasm
-      neovim
+      exa
       ripgrep
-      fzf
       gh
       bat
       jq
       git
-      zsh
-      zplug
       nixfmt
-      shfmt
       asmfmt
       shellcheck
       fd
-      rustup
       cmake
-      php
-      nodejs-16_x
+      php # Required for Alfred nodejs
       jdk17
       awscli
     ] ++ (with nodePackages; [ aws-cdk pnpm ]);
 
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    extraPackages = [ pkgs.shfmt ];
+  };
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  home.sessionVariables = {
+    DOTFILES = "$HOME/dotfiles";
+    PROJECTS_DIR = "$HOME/projects";
+    VISUAL = "nvim";
+    EDITOR = "nvim";
+    USE_EDITOR = "$EDITOR";
   };
 
   home.stateVersion = "22.11";

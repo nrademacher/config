@@ -2,12 +2,21 @@
   programs.zsh = {
     enable = true;
 
-    initExtra = ''
-      [[ ! -f ~/.aliases ]] || source ~/.aliases
-      [[ ! -f ~/z.sh ]] || source ~/z.sh
-      [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    enableSyntaxHighlighting = true;
 
+    shellAliases = import ./aliases.nix;
+
+    localVariables = { ZSHZ_CMD = "_z"; };
+
+    envExtra = ''
+      PATH=./bin/:$PATH
+      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+      ${builtins.readFile ./.p10k.zsh}
+    '';
+
+    initExtra = ''
       # preview fzf search results with bat
       command -v bat  > /dev/null && export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 
@@ -17,7 +26,6 @@
       }
 
       # browse z results with fzf
-      unalias z 2> /dev/null
       z() {
         [ $# -gt 0 ] && _z "$*" && return
         cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "''${*##-* }" | sed 's/^[0-9,.]* *//')"
@@ -30,11 +38,8 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "chisui/zsh-nix-shell"; } # Simple plugin installation
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        {
-          name = "zsh-users/zsh-syntax-highlighting";
-        } # Simple plugin installation
+        { name = "agkozak/zsh-z"; }
+        { name = "chisui/zsh-nix-shell"; }
         {
           name = "romkatv/powerlevel10k";
           tags = [ "as:theme" "depth:1" ];
