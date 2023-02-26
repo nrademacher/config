@@ -1,3 +1,3 @@
 ## systems
 
-My personal system configurations for Darwin/macoOS and NixOS, written in Nix.
+My personal system configurations for Darwin/macOS and NixOS, written in Nix.
