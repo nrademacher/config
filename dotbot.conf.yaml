@@ -15,8 +15,6 @@
     ~/.config/nvim: .config/nvim
     ~/.config/kitty: .config/kitty
     ~/.config/karabiner: .config/karabiner
-    ~/.p10k.zsh: zsh/.p10k.zsh
-    ~/z.sh: zsh/z.sh
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

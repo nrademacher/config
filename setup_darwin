@@ -5,9 +5,6 @@ set -e
 # Get Homebrew if not installed 
 which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install packages from Brewfile
-cd homebrew && brew bundle && cd ..
-
 # Disable Dock icon for Hammerspoon
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
 
