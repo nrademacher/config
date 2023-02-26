@@ -1,9 +1,3 @@
-## dotfiles
+## systems
 
-My personal setup for macOS and/or Linux. 
-
-### Installation
-
-Clone repo, `cd` into its root directory, then run `./setup`.
-
-
+My personal system configurations for Darwin/macoOS and NixOS, written in Nix.
