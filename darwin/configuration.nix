@@ -8,6 +8,8 @@ in {
 
   environment.darwinConfig = "/Users/nrademacher/dotfiles/darwin/configuration.nix";
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   users.users.${mainUser} = {
     name = mainUser;
     home = "/Users/${mainUser}";
