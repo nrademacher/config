@@ -59,6 +59,12 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
     };
+
+    # Delete old generations after 8 days
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 8d";
+    };
   };
 
   # FIXME: Add the rest of your current configuration

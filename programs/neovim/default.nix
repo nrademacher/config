@@ -11,7 +11,6 @@
       seoul256-vim
 
       # Syntax highlighting
-      vim-nix
       (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
 
       # UI
