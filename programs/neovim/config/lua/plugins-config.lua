@@ -9,9 +9,8 @@ require("file-explorer")
 require("autocomplete")
 
 -- treesitter
---[[ local configs = require("nvim-treesitter.configs")
+local configs = require("nvim-treesitter.configs")
 configs.setup {
-  ensure_installed = "all",
   highlight = {
     enable = true
   },
@@ -19,7 +18,7 @@ configs.setup {
     enable = true
   }
 }
- ]]
+
 
 -- telescope
 local telescope = require("telescope")
