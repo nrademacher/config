@@ -6,7 +6,7 @@ in {
   # $ nix-env -qaP | grep wget
   imports = [ <home-manager/nix-darwin> ./homebrew.nix ];
 
-  environment.darwinConfig = "/Users/nrademacher/dotfiles/darwin/configuration.nix";
+  environment.darwinConfig = "/Users/nrademacher/systems/darwin/configuration.nix";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

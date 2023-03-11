@@ -1,21 +1,15 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ../programs/zsh ../programs/git ];
+  imports = [ ../programs/zsh ../programs/git ../programs/neovim ../programs/kitty ];
 
   home = {
     packages = with pkgs;
       [
         exa
-        ripgrep
-        gh
         bat
-        jq
-        shfmt
-        asmfmt
-        nixfmt
+        gh
         shellcheck
-        fd
         cmake
         php # Required for Alfred 
         nodejs
@@ -23,18 +17,7 @@
         awscli
       ] ++ (with nodePackages; [ aws-cdk pnpm ]);
 
-    sessionVariables = {
-      VISUAL = "nvim";
-      EDITOR = "nvim";
-    };
-
-    stateVersion = "22.11";
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
+    stateVersion = "23.05";
   };
 
   programs.fzf = {
