@@ -32,7 +32,7 @@
       }
 
       # vi keybindings
-      bindkey -v
+      # bindkey -v
     '';
 
     zplug = {

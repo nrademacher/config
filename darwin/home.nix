@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ../zsh ../git ];
+  imports = [ ../programs/zsh ../programs/git ];
 
   home = {
     packages = with pkgs;
@@ -17,14 +17,13 @@
         shellcheck
         fd
         cmake
-        php # Required for Alfred nodejs
+        php # Required for Alfred 
+        nodejs
         jdk17
         awscli
       ] ++ (with nodePackages; [ aws-cdk pnpm ]);
 
     sessionVariables = {
-      DOTFILES = "$HOME/dotfiles";
-      PROJECTS_DIR = "$HOME/projects";
       VISUAL = "nvim";
       EDITOR = "nvim";
     };

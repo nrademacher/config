@@ -12,8 +12,6 @@
 
 - link:
     ~/.hammerspoon: .hammerspoon
-    ~/.config/nvim: .config/nvim
-    ~/.config/kitty: .config/kitty
     ~/.config/karabiner: .config/karabiner
 
 - shell:

@@ -1,4 +1,4 @@
-require("el").reset_windows()
+--[[ require("el").reset_windows()
 
 local builtin = require "el.builtin"
 local extensions = require "el.extensions"
@@ -127,4 +127,4 @@ require("el").setup {
 
     return result
   end
-}
+} ]]

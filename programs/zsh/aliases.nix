@@ -13,8 +13,6 @@
 
   # misc shortcuts
   aliases = "$EDITOR $HOME/.aliases"; # Quick access to the aliases.zsh file
-  proj = "cd $PROJECTS_DIR";
-  dots = "cd $DOTFILES";
   grep = "grep --color";
   h = "history";
   nmap = "$EDITOR $HOME/.config/nvim/lua/mappings.lua";
