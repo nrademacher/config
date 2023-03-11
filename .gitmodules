@@ -1,4 +1,3 @@
-[submodule "dotbot"]
-	path = ./darwin/dotbot
+[submodule "darwin/dotbot"]
+	path = darwin/dotbot
 	url = https://github.com/anishathalye/dotbot
-	ignore = dirty

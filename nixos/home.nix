@@ -48,6 +48,7 @@
         brave
 
         # Misc
+        xclip
         gh
         shellcheck
         cmake
