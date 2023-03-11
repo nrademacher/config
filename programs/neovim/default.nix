@@ -87,4 +87,8 @@
     source = ./config;
     recursive = true;
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }
