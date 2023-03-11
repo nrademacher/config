@@ -8,6 +8,8 @@ in
     enable = true;
     config = {
       modifier = mod;
+      defaultWorkspace = "workspace number 1";
+      terminal = "kitty";
       keybindings = lib.mkOptionDefault {
         # Focus
         "${mod}+j" = "focus down";
@@ -22,5 +24,9 @@ in
         "${mod}+Shift+h" = "move left";
       };
     };
+    extraConfig = ''
+      # Disable window borders
+      for_window [all] border pixel 0
+    '';
   };
 }

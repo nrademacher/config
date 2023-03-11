@@ -6,6 +6,7 @@
     # inputs.nix-colors.homeManagerModule
 
     ../programs/zsh
+    ../programs/starship
     ../programs/git
     ../programs/i3
     ../programs/kitty

@@ -12,8 +12,6 @@
 
     envExtra = ''
       PATH=./bin/:$PATH
-      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-      ${builtins.readFile ./.p10k.zsh}
     '';
 
     initExtra = ''
@@ -32,7 +30,13 @@
       }
 
       # vi keybindings
-      # bindkey -v
+      bindkey -v
+
+      # Initialize starhship prompt if installed
+      if command -v starhship &> /dev/null
+      then
+        eval "$(starhship init zsh)"
+      fi
     '';
 
     zplug = {
@@ -40,10 +44,6 @@
       plugins = [
         { name = "agkozak/zsh-z"; }
         { name = "chisui/zsh-nix-shell"; }
-        {
-          name = "romkatv/powerlevel10k";
-          tags = [ "as:theme" "depth:1" ];
-        } # Installations with additional options. For the list of options, please refer to Zplug README.
       ];
     };
   };

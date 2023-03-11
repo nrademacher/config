@@ -1,7 +1,13 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ../programs/zsh ../programs/git ../programs/neovim ../programs/kitty ];
+  imports = [
+    ../programs/zsh
+    ../programs/starship
+    ../programs/git
+    ../programs/neovim
+    ../programs/kitty
+  ];
 
   home = {
     packages = with pkgs;
