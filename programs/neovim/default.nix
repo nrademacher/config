@@ -72,6 +72,11 @@
       nodejs
       tree-sitter
 
+      # Code formatters
+      shfmt
+      asmfmt
+      nixpkgs-fmt
+
       # Telescope tools
       ripgrep
       fd

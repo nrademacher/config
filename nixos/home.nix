@@ -44,11 +44,6 @@
         bat
         exa
 
-        # Code formatters
-        shfmt
-        asmfmt
-        nixpkgs-fmt
-
         # Web browser
         brave
 
