@@ -9,7 +9,7 @@ which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Ho
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
 
 # Run dotbot install script to get and link dotfile configs
-./run_dotbot
+./darwin/run_dotbot
 
 # Open Hammerspoon and Karabiner (keyboard setup) and enable them at startup
 open /Applications/Hammerspoon.app
