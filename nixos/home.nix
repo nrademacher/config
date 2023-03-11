@@ -51,6 +51,9 @@
         gh
         shellcheck
         cmake
+
+        # Media/Entertainment
+        spotify
       ];
 
     sessionVariables = {
