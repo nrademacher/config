@@ -14,7 +14,7 @@
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
   ];
 
   home-manager = {
@@ -79,8 +79,7 @@
 
   time.timeZone = "Europe/Berlin";
 
-  # TODO: Set your hostname
-  networking.hostName = "t15-nixos";
+  # Note: networking.hostName is defined in the particular machine's configuration
   networking.networkmanager.enable = true;
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
