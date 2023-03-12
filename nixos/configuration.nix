@@ -1,26 +1,21 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+{ inputs, lib, config, pkgs, ... }:
 
-{ inputs, lib, config, pkgs, ... }: {
-  # You can import other NixOS modules here
+let
+  meta = import ../meta.nix;
+in
+{
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
     inputs.home-manager.nixosModules.home-manager
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
-    # ./hardware-configuration.nix
   ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      nrademacher = import ./home.nix;
+      ${meta.user.username} = import ./home.nix;
     };
   };
 
@@ -91,7 +86,7 @@
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
-    nrademacher = {
+    ${meta.user.username} = {
       # TODO: You can set an initial password for your user.
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!

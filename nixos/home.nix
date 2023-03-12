@@ -1,5 +1,8 @@
 { inputs, lib, config, pkgs, ... }:
 
+let
+  meta = import ../meta.nix;
+in
 {
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -36,8 +39,8 @@
   };
 
   home = {
-    username = "nrademacher";
-    homeDirectory = "/home/nrademacher";
+    username = meta.user.username;
+    homeDirectory = "/home/${meta.user.username}";
 
     packages = with pkgs;
       [

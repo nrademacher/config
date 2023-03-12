@@ -1,13 +1,16 @@
 { pkgs, ... }:
 
+let
+  meta = import ../../meta.nix;
+in
 {
   programs.git = {
     enable = true;
 
     package = pkgs.gitFull;
 
-    userEmail = "rademacher.nikolay@gmail.com";
-    userName = "Nikolay Rademacher";
+    userEmail = meta.user.emailAddresses.private;
+    userName = meta.user.name;
 
     extraConfig = {
       core = {

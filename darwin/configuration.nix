@@ -1,22 +1,24 @@
 { config, pkgs, ... }:
 
-let mainUser = "nrademacher";
-in {
+let
+  meta = import ../meta.nix;
+in
+{
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   imports = [ <home-manager/nix-darwin> ./homebrew.nix ];
 
-  environment.darwinConfig = "/Users/nrademacher/systems/darwin/configuration.nix";
+  environment.darwinConfig = "/Users/${meta.user.username}/systems/darwin/configuration.nix";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  users.users.${mainUser} = {
-    name = mainUser;
-    home = "/Users/${mainUser}";
+  users.users.${meta.user.username} = {
+    name = meta.user.username;
+    home = "/Users/${meta.user.username}";
   };
 
   home-manager = {
-    users.${mainUser} = import ./home.nix;
+    users.${meta.user.username} = import ./home.nix;
     useGlobalPkgs = true;
     useUserPackages = true;
   };
