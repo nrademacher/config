@@ -62,12 +62,14 @@ in
     };
   };
 
-  # FIXME: Add the rest of your current configuration
-
   # Sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true;
+
+  # Blueooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Required for Sway
   # security.polkit.enable = true;
