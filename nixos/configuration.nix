@@ -76,6 +76,8 @@ in
 
   time.timeZone = "Europe/Berlin";
 
+  location.provider = "geoclue2";
+
   # Note: networking.hostName is defined in the particular machine's configuration
   networking.networkmanager.enable = true;
 

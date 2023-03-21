@@ -24,7 +24,7 @@ in
     font = {
       package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
       name = "FiraCode Nerd Font Regular";
-      size = 12;
+      size = 13.5;
     };
 
     settings = {

@@ -53,7 +53,6 @@ in
 
         # Misc
         xclip
-        gh
         shellcheck
         cmake
 
@@ -69,13 +68,29 @@ in
     stateVersion = "23.05";
   };
 
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs =
+    {
+      # Enable home-manager and git
+      home-manager.enable = true;
+
+      bottom = {
+        enable = true;
+      };
+
+      fzf = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
+      gh = {
+        enable = true;
+        settings = {
+          git_protocol = "ssh";
+        };
+      };
+    };
+
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
@@ -98,5 +113,10 @@ in
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="0"
       export WLR_NO_HARDWARE_CURSORS="1"
     '';
+  };
+
+  services.redshift = {
+    enable = true;
+    provider = "geoclue2";
   };
 }

@@ -10,6 +10,7 @@ in
       modifier = mod;
       defaultWorkspace = "workspace number 1";
       terminal = "kitty";
+      bars = [ ]; # disables all bars
       keybindings = lib.mkOptionDefault {
         # Focus
         "${mod}+j" = "focus down";
@@ -27,6 +28,9 @@ in
     extraConfig = ''
       # Disable window borders
       for_window [all] border pixel 0
+
+      # Moving workspaces between screens
+      bindsym ${mod}+p move workspace to output right
     '';
   };
 }
