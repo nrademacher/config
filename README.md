@@ -16,7 +16,7 @@ These setup instructions assume a fresh install of NixOS.
 1. Bootstrap the system configuration:
    1. For a machine already defined in `meta.nix` and with an entry in `flake.nix`, run `sudo nixos-rebuild switch --flake .#NAME_OF_MACHINE`
    1. For a new machine:
-      1. Add an entry for the machine in `meta.nix`
+      1. Add an entry for the machine in `meta.nix` (see existing entries)
       1. Create a directory for the machine in the `machines` directory, e.g. `johns-laptop`
       1. In the machine's directory, add `hardware-configuration.nix` by running `cp /etc/nixos/hardware-configuration.nix .`
       1. To update the file if the hardware changes, run `sudo nixos-generate-config` and copy over the file again or `echo "$(nixos-generate-config --show-hardware-config)" > hardware-configuration.nix` to update it directly
