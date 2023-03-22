@@ -10,6 +10,7 @@ in
   environment.variables =
     {
       GDK_DPI_SCALE = "1.375";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     };
 
   services.xserver.videoDrivers = [ "intel" ];

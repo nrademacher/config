@@ -48,18 +48,15 @@ in
         bat
         exa
 
-        # Web browser
-        brave
+        brave # Web browser
 
-        # Misc
-        xclip
-        shellcheck
-        cmake
+        # Misc utils
+        xclip # clipboard manager
+        pulseaudio-ctl # volume control
 
-        # Media/Entertainment
-        spotify
+        spotify # music streaming app
 
-        anki-bin
+        anki-bin # spaced-repetition learning app
       ];
 
     sessionVariables = {

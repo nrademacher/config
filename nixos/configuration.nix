@@ -112,6 +112,8 @@ in
     displayManager.lightdm.enable = true;
     displayManager.defaultSession = "none+i3";
     windowManager.i3.enable = true;
+    layout = "us,de";
+    xkbOptions = "grp:alt_shift_toggle";
     libinput = {
       enable = true;
     };
