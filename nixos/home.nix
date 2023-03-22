@@ -58,6 +58,8 @@ in
 
         # Media/Entertainment
         spotify
+
+        anki-bin
       ];
 
     sessionVariables = {
