@@ -12,8 +12,9 @@ These setup instructions assume a fresh install of NixOS.
 
 1. Make `git` available to your shell, e.g. by running `nix-shell -p git`
 1. Clone this repository and change into its directory
-1. Enable nix's command line and flakes features: `export NIX_CONFIG="experimental-features = nix-command flakes"`
-1. Bootstrap the system configuration:
+1. If you are not [me](https://github.com/nrademacher), customize the values in `user` in `meta.nix`
+3. Enable nix's command line and flakes features: `export NIX_CONFIG="experimental-features = nix-command flakes"`
+4. Bootstrap the system configuration:
    1. For a machine already defined in `meta.nix` and with an entry in `flake.nix`, run `sudo nixos-rebuild switch --flake .#NAME_OF_MACHINE`
    1. For a new machine:
       1. Add an entry for the machine in `meta.nix` (see existing entries)
