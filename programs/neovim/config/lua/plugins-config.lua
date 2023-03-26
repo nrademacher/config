@@ -16,7 +16,8 @@ configs.setup {
   },
   autotag = {
     enable = true
-  }
+  },
+  ensure_installed = {}
 }
 
 

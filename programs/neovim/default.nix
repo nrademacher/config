@@ -11,7 +11,7 @@
       seoul256-vim
 
       # Syntax highlighting
-      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+      nvim-treesitter.withAllGrammars
 
       # UI
       lualine-nvim
@@ -68,13 +68,14 @@
     ];
 
     extraPackages = with pkgs; [
-      nodejs
-      tree-sitter
+      nodejs # required for npm package downloads
+      unzip # required for unzipping packages downloaded by e.g. Mason
 
       # Code formatters
       shfmt
       asmfmt
       nixpkgs-fmt
+      stylua
 
       # Telescope tools
       ripgrep
