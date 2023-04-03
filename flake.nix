@@ -23,6 +23,11 @@
         # > Our main nixos configuration file <
         modules = [ ./machines/t15/configuration.nix ];
       };
+      vd-t480 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; }; # Pass flake inputs to our config
+        # > Our main nixos configuration file <
+        modules = [ ./machines/vd-t480/configuration.nix ];
+      };
     };
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;

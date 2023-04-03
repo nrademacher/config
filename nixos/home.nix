@@ -47,6 +47,7 @@ in
         # Core utils
         bat
         exa
+        jq
 
         brave # Web browser
 
@@ -54,9 +55,15 @@ in
         xclip # clipboard manager
         pulseaudio-ctl # volume control
 
+        # VMs
+        vagrant
+        ansible
+
         spotify # music streaming app
 
         anki-bin # spaced-repetition learning app
+
+        _1password # 1password CLI
       ];
 
     sessionVariables = {

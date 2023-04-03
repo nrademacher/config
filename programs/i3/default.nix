@@ -31,6 +31,8 @@ in
 
       # Moving workspaces between screens
       bindsym ${mod}+p move workspace to output right
+
+      exec xautolock -time 1 -locker "i3lock -c 000000"
     '';
   };
 }

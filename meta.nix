@@ -16,5 +16,8 @@ in
     t15 = {
       hostName = "${username}-t15";
     };
+    vd-t480 = {
+      hostName = "${username}-vd-t480";
+    };
   };
 }
