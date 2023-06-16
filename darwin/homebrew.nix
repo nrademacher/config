@@ -23,10 +23,8 @@
     "alfred4"
     "obsidian"
     "hammerspoon"
-    "openvpn-connect"
     "karabiner-elements"
     "kitty"
-    "drawio"
     "spotify"
   ];
 }
