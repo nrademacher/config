@@ -1,15 +1,7 @@
 #!/usr/bin/env bash
 
-set -e
-
-# Get Homebrew if not installed 
-which -s brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Disable Dock icon for Hammerspoon
 defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool FALSE
-
-# Run dotbot install script to get and link dotfile configs
-./run_dotbot
 
 # Open Hammerspoon and Karabiner (keyboard setup) and enable them at startup
 open /Applications/Hammerspoon.app
@@ -19,4 +11,3 @@ osascript -e 'tell application "System Events" to make login item at end with pr
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Karabiner-Elements.app", hidden:true}' > /dev/null
 
 echo "Done! Remember to enable Accessibility for Hammerspoon."
-

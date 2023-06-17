@@ -23,11 +23,23 @@
         awscli
       ] ++ (with nodePackages; [ aws-cdk pnpm ]);
 
+    file.".hammerspoon" =
+      {
+        source = ./.hammerspoon;
+        recursive = true;
+      };
+
     stateVersion = "23.05";
   };
 
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+
+  xdg.configFile.karabiner = {
+    source = ./.config/karabiner;
+    recursive = true;
   };
 }
