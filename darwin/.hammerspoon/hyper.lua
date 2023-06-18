@@ -1,8 +1,4 @@
-local status, hyperModeAppMappings = pcall(require, 'hyper-apps')
-
-if not status then
-  hyperModeAppMappings = require('hyper-apps-defaults')
-end
+local hyperModeAppMappings = require('hyper-apps')
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   local key = mapping[1]
