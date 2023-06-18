@@ -4,7 +4,7 @@ let
   meta = import ../../meta.nix;
 in
 {
-  imports = [ ../../nixos/configuration.nix ./hardware-configuration.nix ];
+  imports = [ ../../systems/nixos/configuration.nix ./hardware-configuration.nix ];
 
   networking.hostName = meta.machines.vd-t480.hostName;
 

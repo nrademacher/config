@@ -19,5 +19,8 @@ in
     vd-t480 = {
       hostName = "${username}-vd-t480";
     };
+    mbp17 = {
+      hostName = "${username}-mbp17";
+    };
   };
 }

@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../programs/zsh
-    ../programs/starship
-    ../programs/git
-    ../programs/neovim
-    ../programs/kitty
+    ../../programs/zsh
+    ../../programs/starship
+    ../../programs/git
+    ../../programs/neovim
+    ../../programs/kitty
   ];
 
   home = {
@@ -32,14 +32,13 @@
     stateVersion = "23.05";
   };
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-
   xdg.configFile.karabiner = {
     source = ./.config/karabiner;
     recursive = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

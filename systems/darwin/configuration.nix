@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }:
 
 let
-  meta = import ../meta.nix;
+  meta = import ../../meta.nix;
 in
 {
   # List packages installed in system profile. To search by name, run:

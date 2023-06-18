@@ -1,19 +1,19 @@
 { inputs, lib, config, pkgs, ... }:
 
 let
-  meta = import ../meta.nix;
+  meta = import ../../meta.nix;
 in
 {
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
 
-    ../programs/zsh
-    ../programs/starship
-    ../programs/git
-    ../programs/i3
-    ../programs/kitty
-    ../programs/neovim
+    ../../programs/zsh
+    ../../programs/starship
+    ../../programs/git
+    ../../programs/i3
+    ../../programs/kitty
+    ../../programs/neovim
   ];
 
   nixpkgs = {

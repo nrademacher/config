@@ -37,7 +37,7 @@
       mbp17 = darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; }; # Pass flake inputs to our config
         system = "x86_64-darwin";
-        modules = [ ./darwin/configuration.nix ];
+        modules = [ ./machines/mbp17/configuration.nix ];
       };
     };
 
