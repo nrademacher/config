@@ -54,16 +54,12 @@ in
         # Misc utils
         xclip # clipboard manager
         pulseaudio-ctl # volume control
-
-        # VMs
-        vagrant
-        ansible
+        feh # light-weight image viewer
+        mpv # general-purpose media player
 
         spotify # music streaming app
 
         anki-bin # spaced-repetition learning app
-
-        _1password # 1password CLI
       ];
 
     sessionVariables = {

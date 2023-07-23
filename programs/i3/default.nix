@@ -26,13 +26,14 @@ in
       };
     };
     extraConfig = ''
+      # Set background image
+      exec --no-startup-id feh --bg-scale ~/Downloads/1674010659131953.jpg
+
       # Disable window borders
       for_window [all] border pixel 0
 
       # Moving workspaces between screens
       bindsym ${mod}+p move workspace to output right
-
-      exec xautolock -time 1 -locker "i3lock -c 000000"
     '';
   };
 }
