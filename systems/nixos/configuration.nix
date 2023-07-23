@@ -9,7 +9,7 @@ in
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
-    home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   home-manager = {
