@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }:
 
 let
-  meta = import ../meta.nix;
+  meta = import ../../meta.nix;
 in
 {
   imports = [
