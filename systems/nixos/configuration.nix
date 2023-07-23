@@ -86,6 +86,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  programs.zsh.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -125,9 +126,9 @@ in
     enable = true;
     # Forbid root login through SSH.
     settings = {
-      permitRootLogin = "no";
+      PermitRootLogin = "no";
       # Use keys only. Remove if you want to SSH using password (not recommended)
-      passwordAuthentication = false;
+      PasswordAuthentication = false;
     };
   };
 
