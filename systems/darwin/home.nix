@@ -12,7 +12,7 @@
   home = {
     packages = with pkgs;
       [
-        exa
+        eza
         bat
         gh
         shellcheck

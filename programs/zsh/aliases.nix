@@ -2,9 +2,9 @@
   cat = "bat";
 
   # ls dir/file colors
-  ls = "exa";
-  l = "exa -1";
-  ll = "exa -la";
+  ls = "eza";
+  l = "eza -1";
+  ll = "eza -la";
 
   # docker shortcuts
   dcu = "docker compose up -d";
