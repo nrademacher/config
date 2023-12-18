@@ -18,7 +18,7 @@
         shellcheck
         cmake
         php # Required for Alfred 
-        nodejs
+        nodejs_21
         jdk17
         awscli
       ] ++ (with nodePackages; [ aws-cdk pnpm ]);
