@@ -10,21 +10,31 @@
     [ "homebrew/cask-versions" "homebrew/cask-fonts" ];
 
   homebrew.casks = [
+    # terminal
+    "kitty"
+
+    # browsers
     "brave-browser"
     "google-chrome"
     "google-chrome-canary"
     "firefox-developer-edition"
+    "arc"
+
+    # information systems
     "anki"
+    "obsidian"
+
+    # for keyboard setup
+    "hammerspoon"
+    "karabiner-elements"
+
+    # misc
     "postman"
     "keka"
     "docker"
     "coconutbattery"
     "font-fira-code-nerd-font"
     "alfred4"
-    "obsidian"
-    "hammerspoon"
-    "karabiner-elements"
-    "kitty"
     "spotify"
   ];
 }
