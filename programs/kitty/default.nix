@@ -29,6 +29,7 @@ in
 
     settings = {
       enable_audio_bell = false;
+      hide_window_decorations = "titlebar-only";
     };
 
     extraConfig = builtins.readFile ./themes/seoul256.conf;
