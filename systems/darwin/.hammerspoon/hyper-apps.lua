@@ -1,8 +1,7 @@
 return {
     {"1", "Kitty"},
-    {"2", "Brave Browser"},
+    {"2", "Arc"},
     {"3", "Anki"},
     {"4", "Obsidian"},
-    {"5", "Docker Desktop"},
-    {"6", "Spotify"},
+    {"5", "Spotify"},
 }
