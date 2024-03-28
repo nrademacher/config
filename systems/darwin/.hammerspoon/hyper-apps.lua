@@ -3,5 +3,5 @@ return {
     {"2", "Arc"},
     {"3", "Anki"},
     {"4", "Obsidian"},
-    {"5", "Spotify"},
+    {"5", "Music"},
 }

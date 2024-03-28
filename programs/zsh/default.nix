@@ -2,8 +2,8 @@
   programs.zsh = {
     enable = true;
 
-    enableAutosuggestions = true;
     enableCompletion = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = import ./aliases.nix;

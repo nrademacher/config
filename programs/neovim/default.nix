@@ -39,6 +39,9 @@
       sqlite-lua
       telescope-frecency-nvim
 
+      # GitHub Copilot
+      copilot-vim
+
       # Git helpers
       git-messenger-vim
       gitsigns-nvim
@@ -73,7 +76,6 @@
 
       # Code formatters
       shfmt
-      asmfmt
       nixpkgs-fmt
       stylua
 

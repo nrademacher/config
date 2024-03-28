@@ -44,4 +44,3 @@ lsp_config.tsserver.setup({
 })
 
 require("lspkind").init({})
--- require("lspsaga").init_lsp_saga()
