@@ -34,7 +34,7 @@
     "docker"
     "coconutbattery"
     "font-fira-code-nerd-font"
-    "alfred4"
+    "alfred@4"
     "spotify"
   ];
 }
